@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+
+<style>
+.aa
+{
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    background:blue;
+    word-break:break-all;
+    transition: width 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s;
+}
+
+.bb {
+    border: solid yellow;
+    background: red;
+    z-index:9988;
+}
+
+a#clickSide {
+    position: fixed;
+    top: 20px;
+    right: 300px;
+}
+
+</style>
+
+<script type="text/javascript">
+
+function narrow() {
+
+    var isTrue=parseInt($('#clickSide').attr('value'));
+
+        if(isTrue==0){
+                $('.aa').css({'width':'250px'});
+                $('#clickSide').attr('value',1);
+        }else{
+                $('.aa').css({'width':'0'});
+                $('#clickSide').attr('value',0);
+        }
+
+        return false;
+}
+
+</script>
+
+</head>
+<body>
+
+<a id="clickSide" href="javascript:void(0)" onclick="narrow()" value="0">按钮</a>
+
+<div class="aa" style="width: 0px;">
+    <div class="bb">aaabbbcccdddeeefffggghhhiiijjjkkklll</div>
+    <div class="bb">胡适的杂文很好看</div>
+    <div class="bb">或者，你可以看看林语堂的小说</div>
+</div>
+
+</body>
+</html>

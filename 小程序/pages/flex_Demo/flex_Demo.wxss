@@ -1,0 +1,62 @@
+/* 轮播图模块 */
+
+.slider,
+.slider image,
+.slider swiper{
+    width: 100%;
+    /* 微信小程序约束的单位是rpx，1px=2rpx */
+    height: 390rpx;
+}
+
+/* 首页导航入口模块 */
+.index-nav{
+    /* 给当前父元素设置成伸缩盒式模式 */
+    display: flex;
+    /* 子元素换行排列 */
+    flex-wrap: wrap;
+}
+
+.index-nav .nav-item{
+    width: 33.333333333%;
+    height: 200rpx;
+    border-bottom: 1rpx solid #ccc;
+    
+    /*
+        box-sizing:呈现出带有指定宽度和高度的框，并把边框和内边距放入框中。
+        属性border-box：为元素设定的宽度和高度决定了元素的边框盒。
+     */
+    box-sizing: border-box;
+    display: flex;
+    /* 设置垂直排列 */
+    flex-direction: column;
+    /* 垂直（主轴）居中 */
+    justify-content: center;
+    /* 水平（交叉轴）居中 */
+    align-items: center;
+    /* 文字约束的单位就是px */
+    font-size: 14px;
+    
+}
+
+
+.index-nav image{
+    width: 80rpx;
+    height: 80rpx;
+}
+
+/* ------------
+    模块三：首页入口分区
+---------- */
+.index-enter{
+    display: flex;
+    padding: 20rpx 25rpx;
+}
+.index-enter .enter-item{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+.index-enter image{
+    width: 320rpx;
+    height: 178rpx;
+}

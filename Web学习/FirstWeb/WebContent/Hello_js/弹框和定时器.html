@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>window对象</title>
+<script type="text/javascript">
+
+	//确认框    确定返回的是true    取消返回的是false
+	//var con = confirm("点击按钮查看返回值");
+	//提示框，在此用来查看confirm的返回值，提示框自身没有返回值
+	//alert(con);
+	
+	//输入框   点击确认返回输入的值，点击取消返回null
+	//var pro = prompt("这是一个输入框");
+	//alert(pro);
+	
+	//open方法   window.open(url地址);打开一个新的窗口
+	//window.open("http://www.baidu.com");
+	
+	//定时器   setTimeout(函数,毫秒值);
+	//setTimeout(
+	//	function(){
+	//		alert("3秒后弹出此窗口");
+	//	},	
+	//	3000
+	//);
+	
+	/* var timer;
+	var fn = function(){
+		alert("此框2秒弹一次");
+		timer = setTimeout(fn,2000);
+	};
+	
+	var closer = function(){
+		//结束计时器   clearTimeout(定时器的名称); 
+		alert("你成功关闭了弹窗");
+		clearTimeout(timer);
+	};
+	fn(); */
+	
+	//setInterval(函数,毫秒值);进行自动循环弹框
+	//clearInterval(定时器的名称);关闭定时器
+	/* var tim = setInterval(
+		function(){
+			alert("此框2秒循环弹一次");
+		},		
+		2000
+	);
+
+	var clos = function(){
+		alert("关闭循环框");
+		clearInterval(tim);
+	}; */
+	var time = 5;
+	var tim = setInterval(
+		function(){
+			var second = document.getElementById("second");
+			if(time>=1){
+				second.innerHTML = time;
+				time--;
+			}else{
+				//关闭定时器
+				clearInterval(tim);
+				//location.href="url地址";跳转到该地址
+				location.href="http://www.baidu.com";
+				
+			}
+		},
+		1000
+	);
+	
+	
+</script>
+</head>
+<body>
+	<!-- <input type="button" value="button" onclick="closer()" > -->
+	
+	<!-- <input type="button" value="button" onclick="clos()"> -->
+	
+	你好啊，小伙子。<span id="second" style="color:red;">5</span>秒后跳转到百度首页，如果不跳转请<a href="http://www.baidu.com">点击这里</a>
+</body>
+</html>

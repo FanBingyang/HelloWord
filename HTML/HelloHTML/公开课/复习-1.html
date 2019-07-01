@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复习-1</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            /*1,使用动画*/
+            /*animation: 动画名称 花费时间 运动曲线(默认,可省略) 次数;*/
+            animation: run 3s infinite;
+        }
+        /*2,定义动画*/
+        @keyframes run {
+            0%{
+                transform: translate(0px);
+            }
+            100%{
+                transform: translate(800px);
+            }
+        }
+    </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>

@@ -1,0 +1,134 @@
+.bg_bottom{
+	height: 50px;
+	width: 100%;
+	background-color: gray;
+	overflow: hidden;
+}
+#left{
+	float: left;
+	margin-top: 30px;
+	width: 350px;
+	height: 800px;
+	margin-left: 50px;
+}
+
+#per{
+	background-color: #CCCCCC;
+	width: 300px;
+	height: 160px;
+	float: left;
+	/*margin-left: 50px;*/
+}
+
+#toux{
+	float: left;
+	margin: 15px;
+	display: block;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+}
+
+.xingming{
+	padding: 20px;
+}
+
+.fenlei{
+	font-family: STLiti;
+	font-size: 20px;
+}
+
+.kongbai{
+	float: left;
+	background-color: white;
+	width: 350px;
+	height: 30px;
+}
+.wenTui{
+	width: 300px;
+}
+.fubiaoti{
+	clear: left;
+	line-height: 2.5;
+	background-color: #575757;
+	border-top-right-radius:20px ;
+	border-top-left-radius:20px ;
+	text-align: center;
+	font-size: 18px;
+	font-weight:bold;/*字体粗体*/
+	color: white;
+}
+.wenTuiList{
+	background-color: #CCCCCC;
+	min-height: 212px;
+}
+.wenTuiList p{
+	margin: 0;
+	line-height: 2;
+	padding-left: 15px;
+}
+
+#wenzhang{
+	height: auto;
+	float: left;
+	background-color: blue;
+}
+
+.wenTuiList a{
+	display: inline-block;
+	color: #3d3d3d;
+	font-weight: 700;
+	max-width: 280px;
+	max-height: 66px;
+	overflow: hidden;
+	word-wrap: break-word;
+}
+
+#right{
+	float: left;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	width: 1050px;
+	min-height: 780px;
+	overflow: hidden;
+	background-color: #f0f0f0;
+}
+
+.wenzhangList{
+	width: 990px;
+	height: 80px;
+	margin-left: 20px;
+}
+
+.wenzhangList a:hover{
+	color: #AE0000;
+}
+.text{
+	color: #7b7b7b;
+}
+
+/*文章内容中超链接显示下划线，颜色为蓝色*/
+#neirong a{
+	color: #2e9ad0;
+	text-decoration: underline;
+}
+/* 文章内容中已访问的链接颜色 */
+#neirong a:visited {
+	color: #9300ad;
+}
+
+.zhuangzai{
+	float: right;
+	margin-right: 100px;
+	width: 80px;
+	height: 28px;
+	font-size: 15px;
+	border-radius: 10px;
+	background: white;
+	color: red;
+	border: 1px solid red;
+	cursor: pointer;  /*设置当鼠标放在该div上时形状变成手的形状*/
+}
+
+
+

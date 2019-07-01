@@ -1,0 +1,8 @@
+<!--logs.wxml-->
+<view class="container log-list">
+  <!-- 以for循环的方式绑定数据，并指定数组元素的变量名为log -->
+  <block wx:for="{{logs}}" wx:for-item="log">
+    <!-- 数组当前元素下标变量名默认为index -->
+    <text class="log-item">{{index + 1}}. {{log}}</text>
+  </block>
+</view>

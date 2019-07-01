@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mapper.PetMapper" >
+  <resultMap id="BaseResultMap" type="pojo.Pet" >
+    <id column="pet_id" property="petId" jdbcType="INTEGER" />
+    <result column="pet_name" property="petName" jdbcType="VARCHAR" />
+    <result column="pet_kind" property="petKind" jdbcType="VARCHAR" />
+    <result column="pet_bir" property="petBir" jdbcType="VARCHAR" />
+    <result column="client_id" property="clientId" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    pet_id, pet_name, pet_kind, pet_bir, client_id
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="pojo.PetExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from pet
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from pet
+    where pet_id = #{petId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from pet
+    where pet_id = #{petId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="pojo.PetExample" >
+    delete from pet
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="pojo.Pet" >
+    insert into pet (pet_id, pet_name, pet_kind, 
+      pet_bir, client_id)
+    values (#{petId,jdbcType=INTEGER}, #{petName,jdbcType=VARCHAR}, #{petKind,jdbcType=VARCHAR}, 
+      #{petBir,jdbcType=VARCHAR}, #{clientId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="pojo.Pet" >
+    insert into pet
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="petId != null" >
+        pet_id,
+      </if>
+      <if test="petName != null" >
+        pet_name,
+      </if>
+      <if test="petKind != null" >
+        pet_kind,
+      </if>
+      <if test="petBir != null" >
+        pet_bir,
+      </if>
+      <if test="clientId != null" >
+        client_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="petId != null" >
+        #{petId,jdbcType=INTEGER},
+      </if>
+      <if test="petName != null" >
+        #{petName,jdbcType=VARCHAR},
+      </if>
+      <if test="petKind != null" >
+        #{petKind,jdbcType=VARCHAR},
+      </if>
+      <if test="petBir != null" >
+        #{petBir,jdbcType=VARCHAR},
+      </if>
+      <if test="clientId != null" >
+        #{clientId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="pojo.PetExample" resultType="java.lang.Integer" >
+    select count(*) from pet
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update pet
+    <set >
+      <if test="record.petId != null" >
+        pet_id = #{record.petId,jdbcType=INTEGER},
+      </if>
+      <if test="record.petName != null" >
+        pet_name = #{record.petName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.petKind != null" >
+        pet_kind = #{record.petKind,jdbcType=VARCHAR},
+      </if>
+      <if test="record.petBir != null" >
+        pet_bir = #{record.petBir,jdbcType=VARCHAR},
+      </if>
+      <if test="record.clientId != null" >
+        client_id = #{record.clientId,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update pet
+    set pet_id = #{record.petId,jdbcType=INTEGER},
+      pet_name = #{record.petName,jdbcType=VARCHAR},
+      pet_kind = #{record.petKind,jdbcType=VARCHAR},
+      pet_bir = #{record.petBir,jdbcType=VARCHAR},
+      client_id = #{record.clientId,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="pojo.Pet" >
+    update pet
+    <set >
+      <if test="petName != null" >
+        pet_name = #{petName,jdbcType=VARCHAR},
+      </if>
+      <if test="petKind != null" >
+        pet_kind = #{petKind,jdbcType=VARCHAR},
+      </if>
+      <if test="petBir != null" >
+        pet_bir = #{petBir,jdbcType=VARCHAR},
+      </if>
+      <if test="clientId != null" >
+        client_id = #{clientId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where pet_id = #{petId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="pojo.Pet" >
+    update pet
+    set pet_name = #{petName,jdbcType=VARCHAR},
+      pet_kind = #{petKind,jdbcType=VARCHAR},
+      pet_bir = #{petBir,jdbcType=VARCHAR},
+      client_id = #{clientId,jdbcType=INTEGER}
+    where pet_id = #{petId,jdbcType=INTEGER}
+  </update>
+</mapper>

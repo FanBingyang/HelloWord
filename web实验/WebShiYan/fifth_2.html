@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>图片预览</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#tab_left{
+				width:180px;
+				height:380px;
+				z-index: 20;
+				float: left;
+			}
+			#tab_left li{
+				list-style-type: none;
+				font-size: 20px;
+				text-align: center;
+				border: 1px solid #CCCCCC;
+			}
+			#tab_left li a{
+				color: #000;
+				text-decoration: none;
+				line-height: 60px;
+				height:60px;
+				display: block;
+				background-color: #fff;
+			}
+			#tab_left li a:hover{
+				text-decoration: none;
+				background-color: greenyellow;
+				line-height: 60px;
+			}
+			#tab_con{
+				width:500px;
+				height:500px;
+				overflow: hidden;
+				float: left;
+				z-index: 10;
+			}
+			#tab_con li{
+				float: left;
+			}
+			#ad{
+				width:900px;
+				margin: 0 auto;
+				margin-top: 40px;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div id="ad">
+			<ul id="tab_left">
+				<li><a href="#">花朵</a></li>
+				<li><a href="#">水滴</a></li>
+				<li><a href="#">蝴蝶</a></li>
+			</ul>
+			<ul id="tab_con">
+				<li><img src="../img/花朵.PNG" /></li>
+				<li><img src="../img/水滴.PNG" /></li>
+				<li><img src="../img/蝴蝶.PNG" /></li>
+			</ul>
+		</div>
+		<script src="../js/jquery-3.3.1.min.js"></script>
+		<script>
+			$(function(){
+				var tabi=$("#tab_left").find("li");
+				var coni=$("#tab_con").find("li");
+				tabi.click(function(){
+					$(this).addClass("on");
+					var index=tabi.index(this);
+					$(this).children().css("background-color","greenyellow");
+					$(this).siblings().children().css("background-color","white");
+					coni.not(index).siblings().hide();
+					coni.eq(index).fadeIn();
+				});
+			})
+		</script>
+	</body>
+</html>

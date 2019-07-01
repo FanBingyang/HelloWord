@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>表单标签</title>
+</head>
+<body>
+	<form name="myform" action="#" method="post">
+		<table>
+			<tr>
+				<td>姓名</td>
+				<td><input type="text" name="username"></td>
+			</tr>
+			<tr>
+				<td>密码</td>
+				<td><input type="password" name="userpassword"></td>
+			</tr>
+			<tr>
+				<td>性别</td>
+				<!-- 如果想让一组选项互斥，那么他们的name属性值必须相同 -->
+				<td>
+					<input type="radio" name="sex" value="man" checked>男
+					<input type="radio" name="sex" value="woman">女
+				</td>
+			</tr>
+			<tr>
+				<td>爱好</td>
+				<td>
+					<input type="checkbox" name="hobby" value="football" checked="checked">足球
+					<input type="checkbox" name="hobby" value="baskerball">篮球
+					<input type="checkbox" name="hobby" value="paiqiu">排球
+				</td>
+			</tr>
+			<tr>
+				<td>地址</td>
+				<td>
+					<select name="city">
+						<option value="bj">北京</option>
+						<option value="sh">上海</option>
+						<option value="zz" selected="selected">郑州</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>邮箱</td>
+				<td><input type="text" name="email" value=""></td>
+			</tr>
+			<tr>
+				<td>上传头像</td>
+				<td><input type="file" name="file" name="touxiang"></td>
+			</tr>
+			<tr>
+				<td>备注</td>
+				<td><textarea name="beizhu" cols="30" rows="10">This is my page!!!</textarea></td>
+			</tr>
+			
+			<tr>
+				<td></td>
+				<td><input type="submit" value="注册" name="ok"/>
+					<input type="reset" value="取消" name-="no"/></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<!-- type="image",表示一个图片按钮 -->
+					<input type="image" src="image/btn.gif" alt="注册" name="imgzhuce">
+					<!-- hidden，隐藏表单，作用：服务器需要表单数据，但是不需要用户看到 -->
+					<input type="hidden" name="hid" value="hid">
+				</td>
+			</tr>
+		</table>
+	
+	
+	</form>
+
+
+
+
+</body>
+</html>

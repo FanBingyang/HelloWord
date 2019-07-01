@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>体会过度</title>
+    <style type="text/css">
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            /*宽度发生变化，属性就是宽度*/
+            transition-property: width;
+            /*动画的花费时间，单位是秒（s）*/
+            transition-duration: 1s;
+            /*运动曲线*/
+            /*linear:匀速
+               ease:慢-快-慢 （默认）
+               ease-in:慢-快
+               ease-out:快-慢
+               ease-in-out:慢-快-慢
+               */
+            transition-timing-function: ease;
+            /*延时时间，什么时候开始*/
+            transition-delay: 2s;
+        }
+        /*鼠标经过盒子的时候，宽度变成800px*/
+        .box:hover{
+            width: 800px;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+
+</div>
+</body>
+</html>

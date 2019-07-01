@@ -1,0 +1,109 @@
+/*添加背景色和滚动条*/
+.navMenuBox {
+	/*background-color: #1c2229;*/
+	overflow:auto;
+	/* padding-left:20px;  */
+	padding-top:40xp;
+}
+#div1_div{
+	
+	color: #ABB1B7; 
+}
+a{
+	display: block;
+	line-height: 30px;
+	font-size: 17px;
+	text-decoration: none;
+	color:  #ABB1B7 ;
+	border-top: 1px solid white;
+	border-bottom: 2px solid white;
+}
+/*去掉默认样式*/
+.navMenuBox ul,
+.navMenuBox li {
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+}
+ 
+.navMenu>li>div {
+	display: block;
+	line-height: 40px;
+	font-size: 17px;
+	text-decoration: none;
+	/* color: #ABB1B7;  */
+	border-top: 1px solid white;
+	border-bottom: 2px solid white;
+a{
+	display: block;
+	line-height: 30px;
+	font-size: 17px;
+	text-decoration: none;
+	color: #ABB1B7;
+	border-top: 1px solid #222932;
+	border-bottom: 2px solid #191e24;
+}
+ 
+.navMenu>li.active>a,
+.navMenu>li>a:hover,
+.subMenu>li.active>a,
+.subMenu>li>a:hover {
+	 color: #FFF; 
+	 background: #12181b;
+}
+ 
+.subMenu>li>div {
+	display: block;
+	line-height: 36px;
+	font-size: 16px;
+	text-decoration: none;
+	/* color: #ABB1B7; */
+	content: "\27A7";
+}
+ 
+ul.subMenu {
+	margin-top: 8px;
+	margin-left: 10px;
+	padding-bottom: 5px;
+}
+ 
+.subMenu>li> a {
+	padding-left: 20px;
+}
+ 
+a.arrow:after {
+	display: block;
+	float: right;
+	margin-right: 15px;
+	font-size: 16px;
+	line-height: 30px;
+	font-family: FontAwesome;
+	content: "\27A7";
+	font-weight: 300;
+	text-shadow: none;
+}
+ 
+li.active>a.arrow:after {
+	display: block;
+	float: right;
+	margin-right: 15px;
+	font-size: 16px;
+	line-height: 30px;
+	font-family: FontAwesome;
+	content: "\27A7";
+	font-weight: 300;
+	text-shadow: none;
+}
+ /* 这个是左右两边瓯绣暗示i特殊符号
+.navMenu>li>a:before{
+	display: block;
+	float: left;
+	margin: 0 5px;
+	font-size: 20px;
+	line-height: 40px;
+	font-family: FontAwesome;
+	content: "\2715";
+	font-weight: 300;
+	text-shadow: none;
+}
+*/

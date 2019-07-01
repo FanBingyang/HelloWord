@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--导入jquery-->
+		<script type="text/javascript" src="jquery-3.3.1.min.js" ></script>
+		<!--导入自定义js文件-->
+		<script type="text/javascript" src="navMenu.js" ></script>
+		<!--导入自定义css-->
+		<link rel="stylesheet" href="navMenu.css" />
+		<!--导入Font Awesome图标字库css文件-->
+		<link rel="stylesheet" href="font-awesome.min.css" />
+		<style type="text/css">
+			.navMenuBox{
+				width: 200px;
+				height: 500px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--包裹层-->
+		<div class="navMenuBox">
+			<!--一级菜单-->
+			<ul class="navMenu">
+				<!--菜单项-->
+				<li>
+					<!--arrow类给具有下级菜单项添加箭头图标-->
+					<a href="#" class="arrow">主页</a>
+					<!--子菜单-->
+					<ul class="subMenu">
+						<li><a href="#">用户管理</a></li>
+						<li><a href="#">角色管理</a></li>
+						<li><a href="#">权限管理</a></li>
+						<li>
+							<a href="#" class="arrow">我的任务</a>
+							<!--子菜单-->
+							<ul class="subMenu">
+								<li><a href="#">任务一</a></li>
+								<li><a href="#">任务二</a></li>
+								<li><a href="#">任务三</a></li>
+								<li><a href="#">任务四</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li><a href="#">文章管理</a></li>
+				<li>
+					<a href="#" class="arrow">网站管理</a>
+					<!--子菜单-->
+					<ul class="subMenu">
+						<li><a href="#">网站设置</a></li>
+						<li><a href="#">友情链接</a></li>
+						<li><a href="#">分类管理</a></li>
+						<li><a href="#">系统日志</a></li>
+					</ul>
+				</li>
+			</ul>
+			</ul>
+		</div>
+	</body>
+</html>

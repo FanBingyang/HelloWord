@@ -1,0 +1,37 @@
+<view class='avatar center'>
+    <image  src='../assets/images/touxiang.png'></image>
+</view>
+<!-- class='divider':引用之前封装的分割线类 -->
+<view class='divider'></view>
+<view class='cell'>
+    <!-- class=arrow':引用之前封装的右箭头 -->
+    <navigator class='cell-item arrow'>
+        <text>个人资料</text>
+    </navigator>
+     <navigator class='cell-item arrow'>
+        <text>我的优惠卷</text>
+    </navigator>
+</view>
+<view class='divider'></view>
+<view class='cell'>
+    <!-- class=arrow':引用之前封装的右箭头 -->
+    <navigator class='cell-item arrow'>
+        <text>常见问题</text>
+    </navigator>
+     <navigator class='cell-item arrow'>
+        <text>使用条款</text>
+    </navigator>
+    <navigator class='cell-item arrow'>
+        <text>反馈意见</text>
+    </navigator>
+     <navigator class='cell-item arrow'>
+        <text>系统消息</text>
+    </navigator>
+</view>
+<view class='divider'></view>
+<view class='cell'>
+    <!-- class=arrow':引用之前封装的右箭头 -->
+    <navigator class='cell-item arrow'>
+        <text>设置</text>
+    </navigator>
+</view>

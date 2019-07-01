@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 3 elements from project &apos;Mybatis-Spring2&apos;&#x0D;&#x0A;- Original project: &apos;Mybatis-Spring2&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     Mybatis-Spring2/src/dao&#x0D;&#x0A;     Mybatis-Spring2/src/mapper&#x0D;&#x0A;     Mybatis-Spring2/src/pojo" description="Delete elements" element1="/src&lt;pojo" element2="/src&lt;mapper" element3="/src&lt;dao" elements="3" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1555307607350" subPackages="false" version="1.0"/>
+</session>

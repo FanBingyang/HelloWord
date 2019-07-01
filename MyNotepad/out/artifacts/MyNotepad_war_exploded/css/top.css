@@ -1,0 +1,66 @@
+/*页面顶端*/
+.bg_top{
+	height: 100px;
+	width: 100%;
+	background-color: gray;
+	overflow: hidden;
+}
+
+/*图标*/
+#tubiao{
+	float: left;
+	padding-left: 30px;
+	padding-top: 10px;
+	width:100px;
+	height:80px;
+}
+/*标题*/
+#biaoti{
+	float: left;
+	padding-top: 30px;
+	font-family: "宋体";
+	font-size: 40px;
+	font-weight:bold;/*字体粗体*/
+	font-style:italic;/*斜体*/
+}
+/*搜索栏*/
+#top_right{
+	position: relative;
+	padding-top:20px;
+	left: 600px;
+}
+
+/*搜索框*/
+#sousuo{
+	height: 30px;
+	font-size: 14px;
+	width: 140px;
+	border-radius: 15px;
+}
+
+#top_right input:focus {
+	outline: none;
+	width: 140px;
+	border: 0px solid #27c1bf;
+	box-shadow: 0 0 10px #27c1bf;
+	-webkit-transition: all 0.2s ease-in-out;
+}
+/*所有超链接为黑体，并且清除下划线*/
+a{
+	color: black;
+	text-decoration: none;/*清除超链接下划线*/
+}
+
+.top_a{
+	font-weight: bold;
+	font-family: STKaiTi;
+}
+
+.top_a:hover{
+	color: #AE0000;
+}
+#touxiang{
+	border-radius: 50%;/*设置圆角*/
+	width: 50px;
+	height: 50px;
+}

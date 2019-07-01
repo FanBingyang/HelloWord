@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="js/jquery-3.3.1.min.js"></script>
+<style>
+    div{ float: left; height: 245px; text-align: left; border: solid #000 3px; }
+    #header{ width: 100%;  border: 0px;  height: 50px; }
+    #main{ background-color: grey; height: 500px; }
+    img{ width: 120px; height: 200px; }
+    .guess_box{ height: 245px; }
+    .my_hover{ border:solid #00f 3px; }
+    .discount{border: solid #0f0 3px;}
+    .no_discount{border: solid #f00 3px;}
+
+</style>
+<body>
+<div id="header">
+    <h2 align="left">热销书榜</h2>
+</div>
+    <div id="main">
+        <div class="guess_box"><img src="img/book_1.jpg"></div>
+        <div class="guess_box"><img src="img/book_2.jpg"></div>
+        <div class="guess_box"><img src="img/book_3.jpg"></div>
+        <div class="guess_box"><img src="img/book_4.jpg"></div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $(".guess_box").hover(function () {
+               $(this).addClass("my_hover");//当鼠标停留上面是匿名处理函数应用CSS类
+            },
+             function () {
+                $(this).removeClass("my_hover");//鼠标离开从元素删除CSS类
+             });
+
+           $(".guess_box").click(checkForCode);
+           function getRandom(num) {
+               var my_num = Math.floor(Math.random()*num)
+               return my_num;
+           }
+           var hideCode = function () {
+               var numRand = getRandom(4);
+               $(".guess_box").each(function (index,value) { //index：是索引的下标；value:表示当前对象
+                   if(numRand == index){
+                       $(this).append("<span id = 'has_discount'></span>");
+                       return false; //跳出循环
+                   }
+               });
+           }
+           hideCode();
+           function checkForCode() {
+               var discount;
+               if($.contains(this,document.getElementById("has_discount"))){ //contains:第一个参数代表对象，第二个参数是要查找的元素，就是检查第一个元素的所有子元素，查看是否包含第二个元素
+                   var my_num = getRandom(100);
+                   discount = "<p>Your Code CODE"+my_num+"</p>";
+               }else {
+                   discount = "<p>Sorry,no discount this time!</p>"
+               }
+               $(".guess_box").each(function () {
+                  if($.contains(this,document.getElementById("has_discount"))) {
+                      $(this).addClass("discount");
+                  }else {
+                      $(this).removeClass("no_discount");
+                  }
+                  $(this).unbind();
+               });
+               // $("#result").append(discount);
+               $(this).append(discount);
+               $(".guess_box").each(function () { //循环解除".guess_box"其他元素的事件绑定
+                   $(this).unbind("click");
+               });
+           }
+        });
+    </script>
+</body>
+</html>

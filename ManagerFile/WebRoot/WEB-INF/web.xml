@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <display-name></display-name>
+  <!-- <filter>   过滤器配置
+  	<filter-name>AutoLoginFilter</filter-name>
+  	<filter-class>com.zls.filter.AutoLoginFilter</filter-class>
+  </filter>
+  
+  <filter-mapping>
+  	<filter-name>AutoLoginFilter</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>-->
+  <filter> 
+     <filter-name>AutoLoginFilter</filter-name>
+     <filter-class>com.zls.filter.AutoLoginFilter</filter-class>
+  </filter>
+  <filter-mapping>
+     <filter-name>AutoLoginFilter</filter-name>
+     <url-pattern>/*</url-pattern>
+  </filter-mapping>  
+  
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AddFileServlet</servlet-name>
+    <servlet-class>com.zls.servlet.AddFileServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DelFileServlet</servlet-name>
+    <servlet-class>com.zls.servlet.DelFileServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DownloadFileServlet</servlet-name>
+    <servlet-class>com.zls.servlet.DownloadFileServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>FileListServlet</servlet-name>
+    <servlet-class>com.zls.servlet.FileListServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SearchFileServlet</servlet-name>
+    <servlet-class>com.zls.servlet.SearchFileServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UpLoadServlet</servlet-name>
+    <servlet-class>com.zls.servlet.UpLoadServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ByTimeShow</servlet-name>
+    <servlet-class>com.zls.servlet.ByTimeShow</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ByTimeSortServlet</servlet-name>
+    <servlet-class>com.zls.servlet.ByTimeSortServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>EditFileServlet</servlet-name>
+    <servlet-class>com.zls.servlet.EditFileServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.zls.servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AutoLoginFilter</servlet-name>
+    <servlet-class>com.zls.filter.AutoLoginFilter</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>RegistUserServlet</servlet-name>
+    <servlet-class>com.zls.servlet.RegistUserServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CalcuFileServlet</servlet-name>
+    <servlet-class>com.zls.servlet.CalcuFileServlet</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>AddFileServlet</servlet-name>
+    <url-pattern>/addFileServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DelFileServlet</servlet-name>
+    <url-pattern>/delFileServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DownloadFileServlet</servlet-name>
+    <url-pattern>/downloadFileServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>FileListServlet</servlet-name>
+    <url-pattern>/fileListServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SearchFileServlet</servlet-name>
+    <url-pattern>/searchFileServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UpLoadServlet</servlet-name>
+    <url-pattern>/upLoadServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ByTimeShow</servlet-name>
+    <url-pattern>/byTimeShow</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ByTimeSortServlet</servlet-name>
+    <url-pattern>/byTimeSortServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>EditFileServlet</servlet-name>
+    <url-pattern>/editFileServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/loginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AutoLoginFilter</servlet-name>
+    <url-pattern>/autoLoginFilter</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RegistUserServlet</servlet-name>
+    <url-pattern>/registUserServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CalcuFileServlet</servlet-name>
+    <url-pattern>/calcuFileServlet</url-pattern>
+  </servlet-mapping>	
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

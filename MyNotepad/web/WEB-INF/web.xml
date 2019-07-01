@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    <servlet>
+        <servlet-name>SimpleUploader</servlet-name>
+        <servlet-class>servlet.CKEditorUploadServlet</servlet-class>
+        <init-param>
+            <param-name>baseDir</param-name>
+            <param-value>/UserFiles/</param-value>
+        </init-param>
+        <init-param>
+            <param-name>debug</param-name>
+            <param-value>false</param-value>
+        </init-param>
+        <init-param>
+            <param-name>enabled</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <init-param>
+            <param-name>AllowedExtensionsFile</param-name>
+            <param-value></param-value>
+        </init-param>
+        <init-param>
+            <param-name>DeniedExtensionsFile</param-name>
+            <param-value>
+                html|htm|php|php2|php3|php4|php5|phtml|pwml|inc|asp|aspx|ascx|jsp|cfm|cfc|pl|bat|exe|com|dll|vbs|js|reg|cgi|htaccess|asis|ftl
+            </param-value>
+        </init-param>
+        <init-param>
+            <param-name>AllowedExtensionsImage</param-name>
+            <param-value>jpg|gif|jpeg|png|bmp</param-value>
+        </init-param>
+        <init-param>
+            <param-name>DeniedExtensionsImage</param-name>
+            <param-value></param-value>
+        </init-param>
+        <init-param>
+            <param-name>AllowedExtensionsFlash</param-name>
+            <param-value>swf|fla</param-value>
+        </init-param>
+        <init-param>
+            <param-name>DeniedExtensionsFlash</param-name>
+            <param-value></param-value>
+        </init-param>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SimpleUploader</servlet-name>
+        <url-pattern>/uploader</url-pattern>
+    </servlet-mapping>
+
+</web-app>

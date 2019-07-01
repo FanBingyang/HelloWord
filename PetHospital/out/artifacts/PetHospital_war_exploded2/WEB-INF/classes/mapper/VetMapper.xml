@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mapper.VetMapper" >
+    <resultMap id="BaseResultMap" type="pojo.Vet" >
+        <id column="vet_id" property="vetId" jdbcType="INTEGER" />
+        <result column="vet_name" property="vetName" jdbcType="VARCHAR" />
+        <result column="vet_sex" property="vetSex" jdbcType="VARCHAR" />
+        <result column="vet_age" property="vetAge" jdbcType="VARCHAR" />
+        <result column="vet_tel" property="vetTel" jdbcType="VARCHAR" />
+        <result column="vet_major" property="vetMajor" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <sql id="Base_Column_List" >
+    vet_id, vet_name, vet_sex, vet_age, vet_tel, vet_major
+  </sql>
+
+
+  <!--//根据id删除医生-->
+  <!--int deleteVetById(Integer vetId);-->
+    <delete id="deleteVetById" parameterType="Integer">
+        delete from vet
+        where vet_id = #{vetId}
+    </delete>
+
+  <!--//根据条件(名字，专业)查询医生-->
+  <!--List<Vet> selectVetByQuery(Vet vet);-->
+    <select id="selectVetByQuery" parameterType="Vet" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from vet
+        <where>
+            <if test="vetName != null and vetName != ''">
+                vet_name like "%"#{vetName}"%"
+            </if>
+            <if test="vetMajor != null and vetMajor != ''">
+                and vet_major = #{vetMajor}
+            </if>
+        </where>
+    </select>
+
+  <!--//添加医生-->
+  <!--int insertVet(Vet record);-->
+    <insert id="insertVet" parameterType="pojo.Vet" >
+    insert into vet (vet_id, vet_name, vet_sex,
+      vet_age, vet_tel, vet_major
+      )
+    values (#{vetId,jdbcType=INTEGER}, #{vetName,jdbcType=VARCHAR}, #{vetSex,jdbcType=VARCHAR},
+      #{vetAge,jdbcType=VARCHAR}, #{vetTel,jdbcType=VARCHAR}, #{vetMajor,jdbcType=VARCHAR}
+      )
+  </insert>
+
+  <!--//根据id查询医生-->
+  <!--Vet selectVetById(Integer vetId);-->
+    <select id="selectVetById" parameterType="Integer" resultMap="BaseResultMap">
+        select * from vet
+        <where>
+            vet_id = #{vetId}
+        </where>
+    </select>
+
+  <!--//修改医生信息-->
+  <!--int updateVet(Vet vet);-->
+  <update id="updateVet" parameterType="pojo.Vet" >
+    update vet
+    set vet_name = #{vetName,jdbcType=VARCHAR},
+      vet_sex = #{vetSex,jdbcType=VARCHAR},
+      vet_age = #{vetAge,jdbcType=VARCHAR},
+      vet_tel = #{vetTel,jdbcType=VARCHAR},
+      vet_major = #{vetMajor,jdbcType=VARCHAR}
+    where vet_id = #{vetId,jdbcType=INTEGER}
+  </update>
+</mapper>

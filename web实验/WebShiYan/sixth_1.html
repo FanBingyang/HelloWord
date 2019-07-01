@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>美丽说导航条</title>
+		<style>
+			*{
+				margin:0;
+				padding:0;
+				font-family: "微软雅黑";
+			}
+			#main{
+				width:1205px;
+				margin:0 auto;
+			}
+			ul{
+				list-style-type: none;	
+				margin:0;
+				padding:0;			
+			}
+			a.mainnav{
+				text-decoration: none;
+				color:#000;
+				font-weight: bolder;
+				display: block;
+				border-bottom: 2px solid white;	
+				padding-bottom: 5px;	
+			}
+			#nav{
+				background-color:white;		
+				width:100%;	
+				z-index: 2;	
+			}
+			#nav ul li{
+				float:left;
+				padding:5px 37px;
+				
+			}
+			a.mainnav:hover{
+				color:deeppink;	
+				border-bottom: 2px solid deeppink;	
+				padding-bottom: 5px;
+					
+			}
+
+			table{
+				width:1205px;
+			}
+			#headtable td{				
+				font-size:12px;
+				background-color:ghostwhite;
+				height:15px;
+				line-height: 15px;
+				text-align: center;
+			}
+			.line{
+				border-left:1px dotted darkgray;
+			}
+			a.headnav{
+				font-size:10px;
+				color:gray;
+			}
+            hr{
+            	width:100%;
+            	margin-bottom: 10px;
+            	color:ghostwhite;
+            }
+            p#baby{
+            	width:60px;
+            	height:26px;
+            	background-color: rgb(255,51,102);
+            	color:white;
+            	text-align: center;
+            	line-height: 26px;
+            	font-size:10px;
+            }
+			input[type="text"]{
+				border:2px solid deeppink; 
+				height:30px;
+				float:left;
+			}
+			input[type="image"]{
+				height:34px;
+				width:80px;
+				float:left;				
+			}
+			p#form{
+				clear:left;
+				font-size:12px;
+				color:gray;
+				padding-top:5px;
+				word-spacing: 5px;
+			}
+			#contitle{
+				padding-top: 30px;
+				padding-bottom: 15px;
+			}
+			.contitle{
+				font-size: 1.2em;
+				color:grey;
+				font-weight: bolder;
+			}
+			.title-con{
+				color:gray;
+				float:right;
+				font-weight: bold;
+				font-size: 0.6em;
+			}
+			.container{
+				display: flex;
+				justify-content: center;				
+			}
+			ul li{
+				float:left;
+				list-style-type: none;
+			}
+			.good{
+				width:230px;
+				height:410px;
+				margin:10px 5px;
+				position:relative;/*注意此处position的设置，否则tips的位置不对*/
+			}
+			.img{
+				width:230px;
+				height:340px;
+
+			}
+			li:nth-of-type(1) .img{
+				background-image: url(../img/商品1.PNG);
+				background-size: contain;
+			}
+			li:nth-of-type(2) .img{
+				background-image: url(../img/商品2.PNG);
+				background-size: contain;
+			}
+			li:nth-of-type(3) .img{
+				background-image: url(../img/商品3.PNG);
+				background-size: contain;
+			}
+			li:nth-of-type(4) .img{
+				background-image: url(../img/商品4.PNG);
+				background-size: contain;
+			}
+			li:nth-of-type(5) .img{
+				background-image: url(../img/商品5.PNG);
+				background-size: contain;
+			}
+			li:nth-of-type(6) .img{
+				background-image: url(../img/商品6.PNG);
+				background-size: contain;
+			}
+			li:nth-of-type(7) .img{
+				background-image: url(../img/商品7.PNG);
+				background-size: contain;
+			}
+			li:nth-of-type(8) .img{
+				background-image: url(../img/商品8.PNG);
+				background-size: contain;
+			}
+			li:nth-of-type(9) .img{
+				background-image: url(../img/商品9.PNG);
+				background-size: contain;
+			}
+			li:nth-of-type(10) .img{
+				background-image: url(../img/商品10.PNG);
+				background-size: contain;
+			}
+			.price{
+				color:deeppink;
+				font-family:arial;
+				font-size:16px;
+			}
+			.right{
+				float:right;
+				color:gray;
+				font-size:14px;
+			}
+			.tips{
+				clear:right;
+				color:gray;
+			}
+
+			.list li{
+				list-style: none;
+				margin:20px 0;
+				font-size:10px;
+				color:grey;
+			}
+			#tablelist{
+				border-top:1px solid gray;
+				background-color:rgb(245,245,245);
+			}
+			#tablelist td{
+				vertical-align: top;
+				padding:20px;								
+			}
+			#tablelist td.tu{
+				text-align: center;
+			}
+			h4{
+				color:black;
+			}
+			.copyright{
+				text-align: center;
+				font-size:8px;
+				line-height: 20px;
+				color:grey;
+			}
+		</style>
+		<script type="text/javascript" src="../js/jquery-3.3.1.min.js" ></script>
+		
+	</head>
+	<body>
+		<div id="main">
+			<div id="first">
+				<table id="headtable">
+					<tr>
+						<td><img src="../img/首页.PNG" align="center"/><a class="headnav">美丽说首页</a></td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td><img src="../img/微信登陆.PNG" align="center"/><a class="headnav">微信登录</a></td>
+						<td class="line"><a class="headnav">&nbsp;登录&nbsp;</a></td>
+						<td class="line"><a class="headnav">&nbsp;注册&nbsp;</a></td>
+						<td class="line"><img src="../img/收藏.PNG" align="center"/><a class="headnav">我的收藏</a></td>
+						<td class="line"><img src="../img/购物车.PNG" align="center"/><a class="headnav">我的购物车</a></td>
+						<td class="line"><img src="../img/订单.PNG" align="center"/><a class="headnav">我的订单</a></td>
+						<td class="line"><a class="headnav">帮助中心</a></td>
+						<td class="line"><a class="headnav">商家后台</a></td>
+					</tr>
+				</table>
+			</div>
+			<div id="header">
+				<table id="logotable"><tr>
+				<td>
+					<img src="../img/美丽说.PNG" /> 
+				</td>
+				<td>
+					<form>
+						<p id="baby">宝贝</p>
+						<input type="text" size="60"/>
+						<input type="image" src="../img/查询.PNG" />
+						<p id="form">流行Tee 长款连衣裙 雪纺衫 防晒 夏天凉鞋 半身裙 牛仔短裤 小白鞋 新款包包 明星同款</p>
+					</form>
+				</td>
+				<td>
+					<img src="../img/扫码下载.PNG" /> 
+				</td></tr></table>
+			</div>
+			<div id="nav">
+				<ul>
+					<li><a  class="mainnav" href="#">首页</a></li>
+					<li><a  class="mainnav" href="#">上衣</a></li>
+					<li><a  class="mainnav" href="#">裙子</a></li>
+					<li><a  class="mainnav"  href="#">裤子</a></li>
+					<li><a  class="mainnav" href="#">女鞋</a></li>
+					<li><a  class="mainnav" href="#">包包</a></li>
+					<li><a  class="mainnav" href="#">配饰</a></li>
+					<li><a  class="mainnav" href="#">美妆</a></li>
+					<li><a  class="mainnav" href="#">男友</a></li>
+					<li><a  class="mainnav" href="#">童装</a></li>
+					<li><a  class="mainnav" href="#">家居</a></li>
+				</ul>
+			</div>
+			<hr />
+			<div id="banner">
+				<img width="1150px" src="../img/主图.PNG" /> 
+			</div>
+			<div id="content">
+				<div id="contitle">
+					<span class="contitle">热卖商品</span><span class="title-con">春季新款来袭 买买买</span>
+				</div>
+				<div id="container">
+					<ul id="conul">
+						<li>
+							<div class="good">
+								<div class="img"></div>
+								<span class="price">￥59.50</span>
+								<span class="right"><img src="../img/收藏.PNG" align="center"/>4594</span>
+								<div class="tips"><img src="../img/优选.PNG"/>2018新款春装学院风</div>
+							</div>
+						</li>
+						<li>
+							<div class="good">
+								<div class="img"></div>
+								<span class="price">￥98.00</span>
+								<span class="right"><img src="../img/收藏.PNG" align="center"/>14291</span>
+								<div class="tips"><img src="../img/优选.PNG"/>春季新款气质韩范显瘦</div>
+							</div>
+						</li>
+						<li>
+							<div class="good">
+								<div class="img"></div>
+								<span class="price">￥99.00</span>
+								<span class="right"><img src="../img/收藏.PNG" align="center"/>1707</span>
+								<div class="tips"><img src="../img/优选.PNG"/>凡兔女装2018夏季韩版</div>
+							</div>
+						</li>
+						<li>
+							<div class="good">
+								<div class="img"></div>
+								<span class="price">￥98.50</span>
+								<span class="right"><img src="../img/收藏.PNG" align="center"/>14291</span>
+								<div class="tips"><img src="../img/优选.PNG"/>春季新款气质韩范显瘦</div>
+							</div>
+						</li>
+						<li>
+							<div class="good">
+								<div class="img"></div>
+								<span class="price">￥99.00</span>
+								<span class="right"><img src="../img/收藏.PNG" align="center"/>1707</span>
+								<div class="tips"><img src="../img/优选.PNG"/>凡兔女装2018夏季韩版</div>
+							</div>
+						</li>
+						<li>
+							<div class="good">
+								<div class="img"></div>
+								<span class="price">￥59.50</span>
+								<span class="right"><img src="../img/收藏.PNG" align="center"/>4594</span>
+								<div class="tips"><img src="../img/优选.PNG"/>2018新款春装学院风</div>
+							</div>
+						</li>
+						<li>
+							<div class="good">
+								<div class="img"></div>
+								<span class="price">￥59.50</span>
+								<span class="right"><img src="../img/收藏.PNG" align="center"/>14291</span>
+								<div class="tips"><img src="../img/优选.PNG"/>春季新款气质韩范显瘦</div>
+							</div>
+						</li>
+						<li>
+							<div class="good">
+								<div class="img"></div>
+								<span class="price">￥59.50</span>
+								<span class="right"><img src="../img/收藏.PNG" align="center"/>1707</span>
+								<div class="tips"><img src="../img/优选.PNG"/>凡兔女装2018夏季韩版</div>
+							</div>
+						</li>
+						<li>
+							<div class="good">
+								<div class="img"></div>
+								<span class="price">￥98.50</span>
+								<span class="right"><img src="../img/收藏.PNG" align="center"/>14291</span>
+								<div class="tips"><img src="../img/优选.PNG"/>春季新款气质韩范显瘦</div>
+							</div>
+						</li>
+						<li>
+							<div class="good">
+								<div class="img"></div>
+								<span class="price">￥59.50</span>
+								<span class="right"><img src="../img/收藏.PNG" align="center"/>1707</span>
+								<div class="tips"><img src="../img/优选.PNG"/>凡兔女装2018夏季韩版</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+            </div>
+			
+			<div id="footer">				
+				<table id="tablelist">
+					<tr>
+						<td>
+							<h4>买家帮助</h4>
+							<ol class="list">
+								<li>新手指南</li>
+								<li>服务保障</li>
+								<li>常见问题</li>
+								<li>风险监测</li>
+							</ol>
+						</td>
+						<td>
+							<h4>商家帮助</h4>
+							<ol class="list">
+								<li>供货商招募</li>
+								<li>商家后台</li>
+								<li>规则中心</li>
+							</ol>
+						</td>
+						<td>
+							<h4>关于我们</h4>
+							<ol class="list">
+								<li>关于美丽说</li>
+								<li>联系我们</li>
+							</ol>
+						</td>
+						<td>
+							<h4>关注我们</h4>
+							<ol class="list">
+								<li>新浪微博</li>
+								<li>QQ空间</li>
+								<li>腾讯微博</li>
+							</ol>
+						</td>
+						<td></td>
+						<td class="tu">
+							<h4>美丽说微信服务号</h4><br />
+							<img src="../img/美丽说微信号.PNG" />
+						</td>
+						<td class="tu">
+							<h4>美丽说客户端下载</h4><br />
+							<img src="../img/美丽说下载.PNG" />
+						</td>
+					</tr>
+				</table>
+
+			</div>
+			<hr />
+			<p class="copyright">Copyright ©2017 Meilishuo.com  电信与信息服务业务经营许可证100798号 经营性网站备案信息<br/>  
+京ICP备11031139号  京公网安备110108006045  客服电话：400-8158-666  文明办网文明上网举报电话：010-82615762  违法不良信息举报中心</p>
+		</div>
+		<script>
+			var navH =$("#nav").offset().top;  //导航元素与页面顶部之间的距离
+			$(window).scroll(function(){
+				var h = $(this).scrollTop(); //获取滚动条当前的高度
+				if(navH<h){
+					$("#nav").css({
+						position:"fixed",
+						top:"0"
+					});
+				}else{
+					$("#nav").css({
+						position:"static"
+					});
+				}
+			})
+		</script>
+	</body>
+</html>

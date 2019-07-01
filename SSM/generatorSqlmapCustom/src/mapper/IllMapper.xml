@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mapper.IllMapper" >
+  <resultMap id="BaseResultMap" type="pojo.Ill" >
+    <result column="pet_name" property="petName" jdbcType="VARCHAR" />
+    <result column="pet_kind" property="petKind" jdbcType="VARCHAR" />
+    <result column="client_name" property="clientName" jdbcType="VARCHAR" />
+    <result column="vet_name" property="vetName" jdbcType="VARCHAR" />
+    <result column="vet_major" property="vetMajor" jdbcType="VARCHAR" />
+    <result column="illness" property="illness" jdbcType="VARCHAR" />
+    <result column="tim" property="tim" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    pet_name, pet_kind, client_name, vet_name, vet_major, illness, tim
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="pojo.IllExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from ill
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="pojo.IllExample" >
+    delete from ill
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="pojo.Ill" >
+    insert into ill (pet_name, pet_kind, client_name, 
+      vet_name, vet_major, illness, 
+      tim)
+    values (#{petName,jdbcType=VARCHAR}, #{petKind,jdbcType=VARCHAR}, #{clientName,jdbcType=VARCHAR}, 
+      #{vetName,jdbcType=VARCHAR}, #{vetMajor,jdbcType=VARCHAR}, #{illness,jdbcType=VARCHAR}, 
+      #{tim,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="pojo.Ill" >
+    insert into ill
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="petName != null" >
+        pet_name,
+      </if>
+      <if test="petKind != null" >
+        pet_kind,
+      </if>
+      <if test="clientName != null" >
+        client_name,
+      </if>
+      <if test="vetName != null" >
+        vet_name,
+      </if>
+      <if test="vetMajor != null" >
+        vet_major,
+      </if>
+      <if test="illness != null" >
+        illness,
+      </if>
+      <if test="tim != null" >
+        tim,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="petName != null" >
+        #{petName,jdbcType=VARCHAR},
+      </if>
+      <if test="petKind != null" >
+        #{petKind,jdbcType=VARCHAR},
+      </if>
+      <if test="clientName != null" >
+        #{clientName,jdbcType=VARCHAR},
+      </if>
+      <if test="vetName != null" >
+        #{vetName,jdbcType=VARCHAR},
+      </if>
+      <if test="vetMajor != null" >
+        #{vetMajor,jdbcType=VARCHAR},
+      </if>
+      <if test="illness != null" >
+        #{illness,jdbcType=VARCHAR},
+      </if>
+      <if test="tim != null" >
+        #{tim,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="pojo.IllExample" resultType="java.lang.Integer" >
+    select count(*) from ill
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update ill
+    <set >
+      <if test="record.petName != null" >
+        pet_name = #{record.petName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.petKind != null" >
+        pet_kind = #{record.petKind,jdbcType=VARCHAR},
+      </if>
+      <if test="record.clientName != null" >
+        client_name = #{record.clientName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.vetName != null" >
+        vet_name = #{record.vetName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.vetMajor != null" >
+        vet_major = #{record.vetMajor,jdbcType=VARCHAR},
+      </if>
+      <if test="record.illness != null" >
+        illness = #{record.illness,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tim != null" >
+        tim = #{record.tim,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update ill
+    set pet_name = #{record.petName,jdbcType=VARCHAR},
+      pet_kind = #{record.petKind,jdbcType=VARCHAR},
+      client_name = #{record.clientName,jdbcType=VARCHAR},
+      vet_name = #{record.vetName,jdbcType=VARCHAR},
+      vet_major = #{record.vetMajor,jdbcType=VARCHAR},
+      illness = #{record.illness,jdbcType=VARCHAR},
+      tim = #{record.tim,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

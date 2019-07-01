@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>过渡简写</title>
+    <style type="text/css">
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            /*过渡：过度属性 花费时间 运动曲线 延时时间*/
+            /*如果有逗号，就表示多组属性变化过度*/
+            /*transition: height 1s ease 0s,width 1s ease 0s;*/
+
+            /*如果多个属性都变，直接用all*/
+            /*transition: all 1s ease 0s;*/
+
+            /*ease是默认的，延时时间0s也是默认的，可以不用写*/
+            transition: all  0.5s;
+        }
+        .box:hover{
+            height: 500px;
+            width: 600px;
+        }
+    </style>
+
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>

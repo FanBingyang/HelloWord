@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>焦点事件</title>
+</head>
+<body>
+	<label for="txt">name</label>
+	<input id="txt" type="text" /><span id="action"></span>
+</body>
+	<script type="text/javascript">
+		var txt = document.getElementById("txt");
+		txt.onfocus = function(){
+			//获得焦点，显示友好提示
+			var span = document.getElementById("action");
+			span.innerHTML = "用户名格式最少是8位";
+			span.style.color="green";
+		};
+		
+		txt.onblur = function(){
+			//失去焦点，显示错误提示
+			var span = document.getElementById("action");
+			span.innerHTML = "格式错误，请重新输入";
+			span.style.color="red";
+		};
+	
+	
+	
+	
+	
+	
+	</script>
+	
+</html>

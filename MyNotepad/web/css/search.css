@@ -1,0 +1,16 @@
+#nav{
+	float: left;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 130px;
+	width: 1250px;
+	min-height: 520px; /*最小高度像素,超出之后自动增长*/
+	overflow: hidden;
+	background-color: #f0f0f0;
+}
+#null{
+	margin-left: 450px;
+	margin-top: 100px;
+    width: 300px;
+    height: 300px;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>子盒子对齐方式(多行)</title>
+    <style>
+        section{
+            width: 80%;
+            height: 300px;
+            display: flex;
+        }
+        div{
+            height: 200px;
+            background-color: pink;
+            /*每个占一份*/
+            flex: 1;
+            /*每个盒子右边有10px的间隙*/
+            margin-right: 10px;
+        }
+        div:nth-child(2){
+            background-color: purple;
+            /*指定该盒子占几份*/
+            flex: 2;
+        }
+    </style>
+</head>
+<body>
+<section>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+</section>
+</body>
+</html>

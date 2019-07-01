@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片动画</title>
+    <style>
+        img{
+            transition: all 1s;
+        }
+        img:hover{
+            /*两个参数代表x，y*/
+            /*transform: translate(100px,100px);*/
+            /*只写一个参数代表x*/
+            /*transform: translate(30px);*/
+            /*x不动，y动*/
+            transform: translate(0px,100px);
+        }
+    </style>
+</head>
+<body>
+<img src="1.jpg" alt="">
+</body>
+</html>

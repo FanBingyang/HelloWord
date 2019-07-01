@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>事件的相应</title>
+	
+	<!-- <script type="text/javascript">
+		function fn() {
+			alert("点击弹出窗口")
+		}
+	</script> -->
+
+</head>
+<body> 
+	<!-- <input type="button" value="button" onclick="alert('点击弹出的窗口')"> -->
+	<!-- <input type="button" value="button" onclick="fn()"/> -->
+	<input id="btn" type="button" value="button"/>
+	
+</body>
+	<script type="text/javascript">
+			var btn = document.getElementById("btn");
+			btn.onclick = function(){
+				alert("点击弹出个窗口");
+			};
+	</script>
+</html>

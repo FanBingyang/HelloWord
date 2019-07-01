@@ -1,0 +1,3 @@
+运行图标右边的下箭头--》倒数第二个Run Configurations--》找到该项目--》Arguments--》VM arguments为以下配置
+
+-Dfile.encoding=utf-8 -Djava.library.path=libs/natives/windows

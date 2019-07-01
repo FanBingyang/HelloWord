@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>函数</title>
+<script type="text/javascript">
+	//1,普通方式
+	/* function method(){
+		alter("函数封装了一个弹窗");
+	}
+	method(); */
+	
+	//2，匿名函数
+	/* var method = function(){
+		alter("匿名函数");
+	}
+	method() //该变量表示一个方法，调用变量即可*/
+	
+	//3.对象函数
+	/* 语法：new Function(参数1,参数2,...,函数体);
+		注意：参数名称必须使用字符串形式、最后一个默认是函数体且函数体需要字符串形式
+		示例：
+			var fn = new Function("a","b","alert(a+b)");
+			fn(2,5); */
+			
+	/* 
+		函数的参数
+		(1)形参没有var去修饰
+		(2)形参和实参个数不一定相等
+		(3)arguments对象 是个数组 会将传递的实参进行封装
+		function fn(a,b,c){
+			//var sum = a+b+c;
+			//alert(sum);
+			//arguments是个数组 会将传递的实参进行封装
+			for(var i=0;i<arguments.length;i++){
+				alert(arguments[i]);
+			}
+		}
+		fn(1,2,4,8);
+	*/
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

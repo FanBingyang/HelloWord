@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<!-- 
+		阻止事件的默认行为
+		IE：window.event.returnValue = false;
+		W3c: 传递过来的事件对象.preventDefault();
+	 -->
+
+</head>
+<body>
+	<a href="http://www.baidu.com" onclick="fn(event)">点击一下</a>
+	
+	<!-- 通过事件返回false也可以阻止事件的默认行为 -->
+	<!-- <a href="http://www.baidu.com" onclick="return false">点击一下</a> -->
+</body>
+<script type="text/javascript">
+	function fn(e){
+		//判断浏览器是IE还是遵循w3c的浏览器（火狐，谷歌）
+		//W3c标准
+		if(e && e.preventDefault){
+			alert("W3c");
+			e.preventDefault();
+		}
+		//IE标签
+		else{
+			alert("ie");
+			window.event.returnValue = false;
+		}
+	};
+</script>
+</html>

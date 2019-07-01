@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 
+	阻止事件的传播
+		IE：window.event.cancelBubble = true;
+		W3c: 传递过来的事件对象.stopPropagation();
+ -->
+</head>
+<body>
+<!-- 父级和子级div都有点击事件，再点击子级时，父级事件也会背触发，所有要阻止父级的事件 -->
+	<div onclick="fn1()" style="width:100px;height:100px;background-color:green;padding:50px">
+		<div onclick="fn2(e)" style="width:100px;height:100px;background-color:red;">xxx</div>
+	</div>
+</body>
+<script type="text/javascript">
+	function fn1(){
+		alert("fn1");
+	};
+	function fn2(e){
+		alert("fn2");
+		//阻止事件的传播
+		//W3c
+		if(e&&e.stopPropagation){
+			alert("w3c");
+			e.stopPropagation();
+		//IE标签
+		}else{
+			alert("ie");
+			window.event.cancelBubble = true;
+		}
+	};
+</script>
+</html>

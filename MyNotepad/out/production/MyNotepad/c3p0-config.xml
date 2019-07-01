@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c3p0-config>
+	<default-config>
+		<!-- 与数据库建立连接 -->
+		<property name="driverClass">com.mysql.jdbc.Driver</property>
+		<property name="jdbcUrl">jdbc:mysql://localhost:3306/mynotepad?characterEncoding=utf-8</property>
+		<property name="user">root</property>
+		<property name="password">123456</property>
+		<!-- 初始化连接池 -->
+	    <property name="initialPoolSize">20</property>
+	    <!-- 最大等待时间 -->
+	    <property name="maxIdleTime">30</property>
+	    <!-- 最大连接数 -->
+	    <property name="maxPoolSize">100</property>
+	    <!-- 最小连接数 -->
+	    <property name="minPoolSize">10</property>
+	</default-config> 
+</c3p0-config>

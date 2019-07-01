@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mapper.PetMapper" >
+    <resultMap id="BaseResultMap" type="pojo.Pet" >
+        <id column="pet_id" property="petId" jdbcType="INTEGER" />
+        <result column="pet_name" property="petName" jdbcType="VARCHAR" />
+        <result column="pet_kind" property="petKind" jdbcType="VARCHAR" />
+        <result column="pet_bir" property="petBir" jdbcType="VARCHAR" />
+        <result column="client_id" property="clientId" jdbcType="INTEGER" />
+    </resultMap>
+    <sql id="Base_Column_List" >
+    pet_id, pet_name, pet_kind, pet_bir, client_id
+  </sql>
+
+  <!--//通过id删除宠物信息-->
+  <!--void deletePetById(Integer petId);-->
+  <delete id="deletePetById" parameterType="Integer">
+    delete from pet
+    where pet_id = #{petId}
+  </delete>
+
+  <!--//根据用户id删除宠物-->
+  <!--void deletePetByClientId(Integer clientId);-->
+  <delete id="deletePetByClientId" parameterType="Integer">
+    delete from pet
+    where client_id = #{clientId}
+  </delete>
+
+  <!--//添加宠物信息-->
+  <!--int insertPet(Pet pet);-->
+  <insert id="insertPet" parameterType="Pet" >
+    insert into pet (pet_id, pet_name, pet_kind,
+      pet_bir, client_id)
+    values (#{petId}, #{petName}, #{petKind},
+      #{petBir}, #{clientId})
+  </insert>
+
+  <!--//通过id查询宠物信息,一对一关联，以宠物为中心关联客户-->
+  <!--Pet selectPetById(Integer petId);-->
+    <resultMap id="pet" type="Pet" >
+        <id column="pet_id" property="petId" jdbcType="INTEGER" />
+        <result column="pet_name" property="petName" jdbcType="VARCHAR" />
+        <result column="pet_kind" property="petKind" jdbcType="VARCHAR" />
+        <result column="pet_bir" property="petBir" jdbcType="VARCHAR" />
+        <!--一对一关联-->
+        <association property="client" javaType="Client">
+            <id column="client_id" property="clientId"/>
+            <result column="client_name" property="clientName"/>
+        </association>
+    </resultMap>
+  <select id="selectPetById" parameterType="Integer" resultMap="pet">
+    select
+      p.pet_id,
+      p.pet_name,
+      p.pet_kind,
+      p.pet_bir,
+      cl.client_id,
+      cl.client_name
+    from pet p
+    left join client cl
+    on p.client_id = cl.client_id
+    <where>
+        <if test="_parameter != null and _parameter != ''">
+            p.pet_id = #{_parameter}
+        </if>
+  

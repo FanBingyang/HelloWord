@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="menu_wrapper">
+        <div class="left_col">
+            <h4>Dinner Entrees</h4>
+            <ul class="menu_entrees">
+                <li>Thai-style Halibut
+                    <ul class="menu_list">
+                        <li>coconut milk</li>
+                        <li>pan-fried halibut</li>
+                        <li>early aytumn vegetables</li>
+                        <li>Thai spices</li>
+                    </ul>
+                </li>
+                <li>House Grilled Panini
+                    <ul class="menu_list">
+                        <li>porsciutto</li>
+                        <li>provolone</li>
+                        <li>avocado</li>
+                        <li>sourough rool</li>
+                    </ul>
+                </li>
+                <li>Southwest Slider
+                    <ul class="menu_list">
+                        <li>whole chiles</li>
+                        <li>hamburger</li>
+                        <li>peperjack</li>
+                        <li>multigrain</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div clas="topper">
+        <h2>Our Menu</h2>
+        <ul>
+            <li class="nav"><button id="vegon">Go vegetarian</button></li>
+            <li class="nav"><button id="restoreme">Restore Menu</button></li>
+        </ul>
+    </div>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+           var v = f;
+           $("button#vegon").click(function () {
+              if(v==false){
+
+                  v=true;
+              }
+           });
+            $("button#restoreme").click(function () {
+                if(v==true){
+
+                    v=false;
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>

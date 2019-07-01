@@ -1,0 +1,19 @@
+package Demo;
+public class test {
+	public static void main(String[] args){ 
+		int a=5,b=3;
+		System.out.println("one:"+"a="+a+",b="+b); 
+		change(a,b);
+		System.out.println("two:"+"a="+a+",b="+b);
+
+	}
+static void change(int a, int b){
+
+	System.out.println("three:"+"a="+a+",b="+b);
+	a=8;
+	b=9;
+	System.out.println("four"+"a="+a+",b="+b);
+ 
+}
+}
+

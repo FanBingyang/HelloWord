@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .veg_leaf{list-style-image: url("img/yezi.jpg");}
+    </style>
+</head>
+<body>
+    <div id="menu_wrapper">
+        <div class="left_col">
+            <h4>Dinner Entrees</h4>
+            <ul class="menu_entrees">
+                <li>Thai-style Halibut
+                    <ul class="menu_list">
+                        <li>coconut milk</li>
+                        <li class="fish">pan-fried halibut</li>
+                        <li>early aytumn vegetables</li>
+                        <li>Thai spices</li>
+                    </ul>
+                </li>
+                <li>House Grilled Panini
+                    <ul class="menu_list">
+                        <li  class="meat">porsciutto</li>
+                        <li>provolone</li>
+                        <li>avocado</li>
+                        <li>sourough rool</li>
+                    </ul>
+                </li>
+                <li>Southwest Slider
+                    <ul class="menu_list">
+                        <li>whole chiles</li>
+                        <li class="hamburger">hamburger</li>
+                        <li>peperjack</li>
+                        <li>multigrain</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div clas="topper">
+        <h2>Our Menu</h2>
+        <ul>
+            <li class="nav"><button id="vegon">Go vegetarian</button></li>
+            <li class="nav"><button id="restoreme">Restore Menu</button></li>
+        </ul>
+    </div>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+           var v = false;
+           $("button#vegon").click(function () {
+              if(v==false){
+                  $f = $(".fish").parent().parent().detach();//弹出删除
+                  $(".hamburger").replaceWith("<li class='portobello'><em>Portobello Mushroom</em></li>");//替换
+                  $(".meat").after("<li class='tofu'>Tofu</li>");//再指定元素之后添加新的元素
+                  $(".tofu").parent().addClass(".veg_leaf");//给tofu的父类应用CSS样式
+                  $m = $(".meat").detach();//弹出元素并保存
+                  v=true;
+              }
+           });
+            $("button#restoreme").click(function () {
+                if(v==true){
+                    $(".menu_entrees li").first().before($f);//将之前弹出的元素添加到第一个元素之前
+                    $(".portobello").replaceWith("<li class='hamburger'>hamburger</li>")
+                    $(".tofu").each(function (i) {
+                       $(this).after($m[i]) ;//虚循环再把$m中的元素添加到.tofu元素最后
+                    });
+                    $(".tofu").remove();
+                    v=false;
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>

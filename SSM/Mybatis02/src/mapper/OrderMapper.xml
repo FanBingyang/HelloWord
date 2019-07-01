@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 写sql语句 -->
+<mapper namespace="mapper.OrderMapper">
+	<!-- <select id="selectOrdersList" resultType="Orders"> -->
+	
+	<!-- 注入返回值类型 ,自定义结果集映射规则，自定义某个JavaBean的封装规则 -->
+	<!-- id：唯一id，方便引用。
+		type：自定义规则的Java类。 -->
+	<resultMap type="Orders" id="orders">
+		<!-- result：定义普通列封装规则 
+			    column：指定数据库中的哪一列列名
+    			property：指定对应的javaBean中的属性名
+		-->
+		<result column="User_id" property="userId"/>
+		<!--其他不指定的列会自动封装：我们只要写resultMap，就尽量把所有的列都写上-->
+	</resultMap>
+	<!-- 返回类型引用注入 -->
+	<select id="selectOrdersList" resultMap="orders">
+		select id,user_id,number,createtime,note from orders
+	</select>
+	
+	
+	<!-- 一对一关联查询  以订单为中心  关联用户
+		public List<Orders> selectOrders(); -->
+	<resultMap type="Orders" id="order">
+		<result column="id" property="id"/>
+		<result column="user_id" property="userId"/>
+		<result column="number" property="number"/>
+		<!-- 一对一关联 -->
+		<!-- javabean是类与类之间的关联，这时用association -->
+		<association property="user" javaType="User">
+			<id column="user_id" property="id"/>
+			<result column="username" property="username"/>
+		</association>
+	</resultMap>
+	<select id="selectOrders" resultMap="order">
+		<!-- o和u为表的别名，
+			left join：左外连接：结果表中除了满足连接条件（on 后面的 o.user_id = u.id ）
+					      的行外，还包括左表中的所有行 -->
+		select 
+		o.id,
+		o.user_id,
+		o.number,
+		o.createtime,
+	 	u.username 
+		from orders o 
+	 	left join user u 
+	 	on o.user_id = u.id <!-- 连接条件 -->
+	</select>
+	
+	
+	
+	<!-- 一对多关联
+		public List<User> selectUserList();
+	 -->
+	 <resultMap type="User" id="user">
+		<id column="user_id" property="id"/>
+		<result column="username" property="username"/>
+		<!-- 一对多 -->
+		<!-- javabean中的属性是集合set ，这时用collection -->
+		<collection property="ordersList" ofType="Orders">
+			<id column="id" property="id"/>
+			<result column="number" property="number"/>
+		</collection>
+	 </resultMap>
+	 <select id="selectUserList" resultMap="user">
+	 	select 
+	 	o.id,
+	    o.user_id, 
+	    o.number,
+	 	o.createtime,
+	 	u.username 
+	 	from user u
+	 	left join orders o 
+	 	on o.user_id = u.id
+	 </select>
+	 
+	 
+	
+</mapper>

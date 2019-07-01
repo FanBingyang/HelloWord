@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 写sql语句 -->
+<!-- namespace：命名空间，用于隔离sql，
+	还有一个很重要的作用，就是起别名，namespace为mapper的包名时，
+	后面写入参或返回参数类型时只要是mapper包下的，直接写文件名即可，不用在加包名 -->
+<mapper namespace="mapper.UserMapper">	
+	
+	<!-- <sql>标签用于sql语句的拼接 下面sql语句通过<include refid="<sql>标签id"进行引入/>-->
+	<sql id="selector">
+		select * from user 
+	</sql>
+	
+	<!-- 
+		id:statement的id 或者叫做sql的id
+		parameterType:声明输入参数的类型
+		resultType:声明输出结果的类型，应该填写pojo的全路径 ,但是由于前面写的有nammespace，所以在这写文件名即可
+		#{}：输入参数的占位符，相当于jdbc的 ？ ，大括号中写什么无所谓，后面有些时候要规范写数据库表中的属性名
+	 -->
+	<!-- 通过id查询一个用户 -->
+	<select id="findUserById" parameterType="Integer" resultType="User">
+		select * from user where id = #{v}
+	</select>
+	
+	<!-- //根据用户名称模糊查询用户列表
+	#{}    select * from user where id = ？    占位符  ? ==  '五'
+	${}    select * from user where username like '%${value}%'  字符串拼接，大括号中要写value   '%${value}%' =='五'
+	
+	 -->
+	 <select id="findUserByUsername" parameterType="String" resultType="pojo.User">
+	 	select * from user where username like '%${value}%'
+	 </select>
+	 
+	 <!-- 添加用户 -->
+	 <insert id="insertUser" parameterType="pojo.User">
+	 	<!-- 返回刚添加用户的id， order="AFTER"表示在插入之后执行返回-->
+	 	<selectKey keyProperty="id" resultType="Integer" order="AFTER">
+	 		select LAST_INSERT_ID()
+	 	</selectKey>
+	 	insert into user(username,birthday,address,sex)
+	 	values(#{username},#{birthday},#{address},#{sex})
+	 </insert>
+	 
+	 <!-- 更新用户 -->
+	 <update id="updateUserById" parameterType="pojo.User">
+	 	update user
+	 	set username = #{username},sex = #{sex},birthday = #{birthday},address = #{address}
+	 	where id = #{id}
+	 </update>
+	 
+	 <!-- 删除用户 -->
+	 <delete id="deleteUserById" parameterType="Integer">
+	 	delete from user where id = #{v}
+	 </delete>
+	 
+	 <!-- 根据用户名模糊查询 -->
+	 <select id="findUserByQueryVo" parameterType="QueryVo" resultType="pojo.User">
+	 	<!-- 因为User是QueryVo一个属性对象，所以传参时需要调用属性对象的属性名 -->
+	 	select * from user where username like "%"#{user.username}"%"
+	 </select>
+	 
+	 <!-- 查询总记录数 -->
+	 <select id="countUser" resultType="Integer">
+	 	select count(*) from user 
+	 </select>
+	 
+	 
+	 <!-- 根据性别和姓名查询用户，<where>标签可以去掉第一个sql语句中的 前 and -->
+	 <select id="selectUserBySexAndUsername" parameterType="User" resultType="User">
+	 	<!-- 通过include标签通过id引入上面用sql标签定义的sql语句片段，写后面sql语句片段时注意语句前后加上空格 -->
+	 	<include refid="selector"/>
+	 	<where>
+	 		<!-- if语句用来做判断，当某个参数为空时可不执行该参数的sql语句 -->
+	 		<if test="sex!=null and sex!='' ">
+	 			 and sex=#{sex} 
+	 		</if>
+	 		<if test="username != null and username != '' ">
+	 			 and username = #{username}
+	 		</if>
+	 	</where>
+	 </select>
+	 
+	 <!-- 多个id进行查询 eg：(1,2,3) -->
+	 <select id="selectUserByIds" parameterType="QueryVo" resultType="User">
+	 	<!-- 完整sql语句 select * from user where id in (1,2,3)  -->
+	 	<include refid="selector"/>
+	 	<where>
+	 		id in <!-- sql片段 -->
+	 		<!-- foreach用于循环遍历传过来参数集  
+	 			item:临时变量
+	 			separator:各元素之间的间隔符号 "," 
+	 			open:遍历完元素的前包括
+	 			close:遍历完元素的后包括
+	 		-->
+	 		<foreach collection="list" item="id" separator="," open="(" close=")">
+	 			#{id}
+	 		</foreach>
+	 	</where>
+	 </select>
+	 
+	 
+	 
+	 
+</mapper>

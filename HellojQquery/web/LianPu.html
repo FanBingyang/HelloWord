@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>京剧变脸</title>
+
+    <style type="text/css">
+        #frame{
+            position: absolute;/*绝对定位*/
+            left: 10px;
+            top: 150px;
+            width: 271px;
+            height: 388px;
+            background-image: url("img/jingpu/jingpu.bmp");
+            z-index: 2;
+            overflow: hidden;/*超出隐藏*/
+        }
+        #pic_box{
+            position: relative;/*相对定位*/
+            left: 12px;
+            top: 10px;
+            width: 254px;
+            height: 372px;
+            z-index: 1;
+            overflow: hidden;
+        }
+        .face{
+            position: relative;
+            left: 0px;
+            top: 0px;
+            z-index: 0;
+        }
+        #head{ height: 93px; }
+        #eyes{ height: 93px; }
+        #nose{ height: 93px; }
+        #mouth{ height: 93px; }
+
+        #frame2{
+            position: absolute;/*绝对定位*/
+            left: 500px;
+            top: 100px;
+            width: 271px;
+            height: 388px;
+            background-image: url("img/jingpu/jingpu.bmp");
+            z-index: 2;
+            overflow: hidden;/*超出隐藏*/
+        }
+        #lianpu{
+            position: relative;/*相对定位*/
+            left: 12px;
+            top: 10px;
+            width: 254px;
+            height: 372px;
+            z-index: 1;
+            overflow: hidden;
+        }
+       button{
+           width: 100px;
+           height: 60px;
+       }
+
+    </style>
+</head>
+<body>
+   <header id="top">
+       <h2>传统戏法----变脸</h2>
+       <button id="btnRandom" >随机</button>
+       <button id="btnReset">还原</button>
+   </header>
+
+    <div id="frame">
+        <div id="pic_box">
+            <div id="head" class="face"><img src="img/jingpu/head.bmp"></div>
+            <div id="eyes" class="face"><img src="img/jingpu/eyes.bmp"></div>
+            <div id="nose" class="face"><img src="img/jingpu/nose.bmp"></div>
+            <div id="mouth" class="face"><img src="img/jingpu/mouth.bmp"></div>
+        </div>
+    </div>
+   <div id="frame2">
+       <div id="lianpu">
+           <div id="lian" class="face"><img src="img/jingpu/lianpu.bmp/"></div>
+       </div>
+
+   </div>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/LianPu.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<view class='slider'>
+<!-- 轮播图分区 -->
+<!-- 
+    <swiper indicator-dots='是否显示面板指示点' autoplay='是否自动切换     'interval='自动切换的时长' duration='滑动动画的时长' circular='是      否采用衔接滑动'>
+ -->
+ <!-- 当属性设置为true或者false时，要用{{ }}括起来，不然会被当成字符串，为true时可以用引号，也可以只写属性名 -->
+<swiper indicator-dots='{{ true }}' autoplay='{{ true }}' interval='2000' duration='500' circular>
+    <swiper-item>
+        <image src='https://aecpm.alicdn.com/simba/img/TB1CWf9KpXXXXbuXpXXSutbFXXX.jpg_q50.jpg'></image>
+    </swiper-item>
+    <swiper-item>
+        <image src='https://gw.alicdn.com/imgextra/i1/4/O1CN01d6GFoL1Bts4knDyY2_!!4-0-lubanu.jpg'></image>
+    </swiper-item>
+    <swiper-item>
+        <image src='https://oss.suning.com/aps/aps_learning/image/429081201/20190104/3087a32188c04c24a8b6cd05758e59e0.jpg' ></image>
+    </swiper-item>
+</swiper>
+
+<!-- 对请求数据的处理及列表渲染
+    <swiper indicator-dots='{{ true }}' autoplay='{{ true }}' interval='2000' duration='500' circular>
+    小程序列表渲染 wx:for="{{要循环的数据}}，item表示循环的元素"            wx:key="循环数据中的唯一标识"，提高效率
+    
+        <swiper-item wx:for="{{slider}}" wx:key="循环数据中唯一标识">
+            <image src='{{item.元素名'></image>
+        </swiper-item>
+        
+        获取js请求的数据
+        <swiper-item>
+            请求不到图片时可以在添加元素属性lazy-load
+            <image src='{{slider[0].元素名' lazy-load></image>
+        </swiper-item>
+    </swiper>
+-->
+
+<!-- 通过两个大括号{{ }}可以拿到JS中绑定的数据 -->
+<!-- <view>{{ message }}</view>   -->
+
+</view>
+<!-- 导航分区 -->
+<view class='index-nav'>
+  <navigator class='nav-item bdr' url='/pages/meishi/meishi'>
+    <image src='../assets/images/01.png'></image>
+    <text>美食</text>
+  </navigator>
+  <navigator class='nav-item bdr '>
+    <image src='../assets/images/02.png'></image>
+    <text>洗浴</text>
+  </navigator>
+  <navigator class='nav-item bdr'>
+    <image src='../assets/images/03.png'></image>
+    <text>结婚啦</text>
+  </navigator>
+  <navigator class='nav-item bdr'>
+    <image src='../assets/images/04.png'></image>
+    <text>卡拉OK</text>
+  </navigator>
+  <navigator class='nav-item bdr'>
+    <image src='../assets/images/05.png'></image>
+    <text>找工作</text>
+  </navigator>
+  <navigator class='nav-item bdr'>
+    <image src='../assets/images/06.png'></image>
+    <text>辅导班</text>
+  </navigator>
+  <navigator class='nav-item bdr'>
+    <image src='../assets/images/07.png'></image>
+    <text>汽车保养</text>
+  </navigator>
+  <navigator class='nav-item bdr'>
+    <image src='../assets/images/08.png'></image>
+    <text>租房</text>
+  </navigator>
+  <navigator class='nav-item bdr'>
+    <image src='../assets/images/09.png'></image>
+    <text>装修</text>
+  </navigator>
+  
+
+</view>
+<!-- 分割区 -->
+<view class='divider'></view>
+<!-- 首页入口分区 -->
+<view class='index-enter'>
+    <navigator class='enter-item'>
+        <image src='../assets/images/enter01.png'></image>
+    </navigator>
+    <navigator class='enter-item'>
+        <image src='../assets/images/enter02.png'></image>
+    </navigator>
+</view>

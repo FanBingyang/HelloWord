@@ -1,0 +1,38 @@
+1533089127544	Extract local variable 'sos'
+1533089584092	Rename resource '14.jpg'
+1533094408377	Extract method 'yanzhengma'
+1533107527737	Delete element
+1533107728312	Rename type 'ServletDemo1'
+1533107737901	Rename type 'ServletDemo2'
+1533107746261	Rename type 'ServletDemo3'
+1533107760460	Rename type 'ServletDemo4'
+1533107767236	Rename type 'ServletDemo5'
+1533107773036	Rename type 'ServletDemo6'
+1533113055568	Rename type 'HttpDemo1'
+1533113066920	Rename type 'HttpDemo2'
+1533113072245	Rename type 'HttpDemo4'
+1533113077919	Rename type 'HttpDemo3'
+1533113082798	Rename type 'HttpDemo5'
+1533113086779	Rename type 'HttpDemo6'
+1533113092490	Rename type 'ResponseDemo'
+1533114019519	Extract method 'test1'
+1533114318702	Extract method 'test2'
+1533114429966	Extract method 'test3'
+1533116170244	Extract method 'test1'
+1533121311136	Extract method 'test2'
+1533122372099	Extract method 'test3'
+1533122697335	Extract method 'test4'
+1533123340712	Rename type 'RequestDemo5'
+1533177190525	Rename type 'login1'
+1533177238844	Delete element
+1533196573781	Rename type 'ShowAllBooksServet'
+1533200687061	Rename type 'showCart'
+1533200693022	Rename type 'addCart'
+1533200942138	Rename type 'ShowAllBooksServet_1'
+1533212128113	Move 'Dologin1.html' to 'WebContent'
+1533212661560	Delete element
+1533212673139	Rename resource 'index.jsp'
+1533262771624	Delete element
+1533263043829	Delete element
+1533264565838	Delete element
+1533373793872	Delete element

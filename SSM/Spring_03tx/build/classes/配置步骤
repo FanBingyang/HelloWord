@@ -1,0 +1,23 @@
+1.导入约束
+	Window-->Preferences-->搜索cata，找到XML Catalog-->add-->找到本机的http://www.springframework.org/schema/context/spring-context-4.2.xsd
+	-->Key type-->Schema location-->将spring-context-4.2.xsd复制到Key的末尾，记得加上/后复制-->ok
+	
+2.配置约束
+	打开XML文件-->书写beans-->切换到design视图-->选中beans右键-->Edit Schema Information-->add-->Specify New Namespace-->
+	Location Hint-->选中上面刚刚添加的约束-->将去掉文件名的路径http://www.springframework.org/schema/context复制到Namespace Name中-->Prefix为context-->ok
+ ***打开XML文件切换到Source视图，再beans中写<,然后Alt+/会出来提示，则表示配置成功	
+ 注意：一个xml文件里只能有一个约束的Prefix为空，上一个约束已经配置为空了，这次就不能为空了，用文件的上一侧文件夹名填入
+ 
+ 3.开启使用注解代理配置文件
+ 	指定扫描bean包下的所有类中的注解，注意：扫描包时，会扫描指定包下的所有子孙包
+ 	<context:component-scan base-package="bean"></context:component-scan>
+ 	
+导入新的约束G:\代码仓库\jar包\spring-framework-4.2.4.RELEASE\schema\tx\spring-tx-4.2.xsd
+步骤同上
+
+
+XML中约束的作用:
+beans:最基本
+context:读取properties配置
+aop:配置aop
+tx配置事务通知

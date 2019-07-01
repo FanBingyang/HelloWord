@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>选项卡</title>
+		<style>
+			.tab{ 
+				width:500px; 
+				height:240px; 
+				border:1px solid #ccc; 
+				position:relative; 
+				left:100px; 
+				top:100px; 
+				padding-top:10px;
+			}
+			.tab_menu{ 
+				height:32px; 
+				border-bottom:1px solid #ccc; 
+				padding-left:20px;				
+			}
+			.tab_menu li{ 
+				float:left; 
+				width:80px; 
+				height:30px; 
+				line-height:30px; 
+				text-align:center;
+				cursor:pointer;
+				list-style: none;
+			}
+			.tab_menu .ac{ 
+				border:1px solid #ccc;
+				color:#000; font-weight:bold; 
+				border-bottom:1px solid #fff;
+				position:relative;
+				top:1px;
+			}
+			.tab_box{ 
+				padding:5px 0 0 20px;
+			}
+			.tab_box li{ 
+				border-bottom:1px dashed #ddd;
+				font-size:12px; 
+				color:#999;
+				list-style: none;
+			}
+			.tab_box li a{ 
+				display:inline-block; 
+				font-size:14px;
+				height:30px; 
+				line-height:30px; 
+				width:300px;
+			}
+			.tab_box li a:hover{ 
+				color:red; 
+				text-decoration:underline;
+			}
+			.sportsList,.musicList{display: none;}
+		</style>
+	</head>
+	<body>
+		<div class="tab">
+			<div class="tab_menu">
+				<ul>
+					<li class="ac">时事</li>
+					<li>体育</li>
+					<li>音乐</li>
+				</ul>
+			</div>
+			<div class="tab_box"> 
+				<div class="newsList">
+					<ul>
+						<li><a href="#">本市新闻</a>2018-11-26</li>
+						<li><a href="#">国内新闻</a>2018-11-26</li>
+						<li><a href="#">国外新闻</a>2018-11-26</li>
+					</ul>
+			   </div>
+			   <div class="sportsList">
+					<ul>
+						<li><a href="#">足球</a>2018-11-26</li>
+						<li><a href="#">篮球</a>2018-11-26</li>
+						<li><a href="#">冰球</a>2018-11-26</li>
+						<li><a href="#">乒乓球</a>2018-11-26</li>
+					</ul>
+			   </div>
+			   <div class="musicList">
+			    	<ul>
+			    		<li><a href="#">流行音乐</a>2018-11-26</li>
+			    		<li><a href="#">摇滚乐</a>2018-11-26</li>
+			    		<li><a href="#">古典乐</a>2018-11-26</li>
+			    		<li><a href="#">民谣</a>2018-11-26</li>
+			    		<li><a href="#">朋克音乐</a>2018-11-26</li>
+			    	</ul>
+			    </div>
+			</div>
+		</div>
+		<script src="../js/jquery-3.3.1.min.js"></script>
+		<script>
+			$(function(){
+				$(".tab_menu ul li").click(function(){
+					var i = $(this).index();
+					$(this).addClass("ac").siblings().removeClass("ac");
+					$(".tab_box > div").eq(i).show();
+					$(".tab_box > div").eq(i).siblings().hide();
+				});
+			})
+		</script>
+	</body>
+</html>

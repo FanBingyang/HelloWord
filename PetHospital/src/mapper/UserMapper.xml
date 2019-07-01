@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mapper.UserMapper" >
+    <!--设置返回List集合时，，数据库中表列的值和JavaBean中的属性名不一致时，这是映射关系-->
+    <resultMap id="BaseResultMap" type="User" >
+        <id column="user_id" property="userId" jdbcType="INTEGER" />
+        <result column="user_name" property="userName" jdbcType="VARCHAR" />
+        <result column="password" property="password" jdbcType="VARCHAR" />
+        <result column="user_address" property="userAddress" jdbcType="VARCHAR" />
+        <result column="user_sex" property="userSex" jdbcType="VARCHAR" />
+        <result column="user_age" property="userAge" jdbcType="INTEGER" />
+        <result column="user_tel" property="userTel" jdbcType="VARCHAR" />
+    </resultMap>
+    <!--sql片段，返回表中所有列-->
+    <sql id="Base_Column_List" >
+    user_id, user_name, password, user_address, user_sex, user_age, user_tel
+  </sql>
+
+  <!--//删除员工-->
+  <!--void deleteUserById(Integer userId);-->
+    <delete id="deleteUserById" parameterType="Integer">
+        delete from user
+        where user_id = #{userId}
+    </delete>
+
+  <!--//添加员工-->
+  <!--void insertUser(User user);-->
+    <insert id="insertUser" parameterType="pojo.User" >
+    insert into user (user_id, user_name, password,
+      user_address, user_sex, user_age,
+      user_tel)
+    values (#{userId,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
+      #{userAddress,jdbcType=VARCHAR}, #{userSex,jdbcType=VARCHAR}, #{userAge,jdbcType=INTEGER},
+      #{userTel,jdbcType=VARCHAR})
+  </insert>
+
+
+
+    <!--//通过id查询员工-->
+  <!--User selectUserById(Integer userId);-->
+    <select id="selectUserById" parameterType="Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from user
+        where user_id = #{userId}
+    </select>
+
+  <!--//通过条件(姓名,性别)查询员工信息-->
+  <!--List<User> selectUserByQuery(User user); -->
+    <select id="selectUserByQuery" parameterType="User" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from user
+        <where>
+            <if test="userName != null and userName != ''">
+                user_name like "%"#{userName}"%"
+            </if>
+            <if test="userSex != null and userSex != ''">
+                and user_sex = #{userSex}
+            </if>
+        </where>
+    </select>
+
+  <!--//修改员工，-->
+  <!--int updateUserById(User user);-->
+  <update id="updateUserById" parameterType="User" >
+    update user
+    set user_name = #{userName,jdbcType=VARCHAR},
+    <if test="password != null and password != ''">
+      password = #{password,jdbcType=VARCHAR},
+    </if>
+      user_address = #{userAddress,jdbcType=VARCHAR},
+      user_sex = #{userSex,jdbcType=VARCHAR},
+      user_age = #{userAge,jdbcType=INTEGER},
+      user_tel = #{userTel,jdbcType=VARCHAR}
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+</mapper>

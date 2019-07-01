@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .hover{
+            border:solid #f00 5px;
+        }
+        .no_hover{
+            border: solid #000 3px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header" class="no_hover"><h1>Header</h1></div>
+    <button type="button" id="but1">添加CSS</button>
+    <button type="button" id="but2">移除CSS</button>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+           $("#but1").click(function () {
+               $("#header").addClass("hover");//为元素增加一个CSS类，不会影响这个元素已有的CSS类，也可以添加多个类，之间用空格隔开
+               $("#header").removeClass("no_hover");//删除元素的一个CSS类
+0           }) ;
+            $("#but2").click(function () {
+                $("#header").removeClass("hover");
+                $("#header").addClass("no_hover");
+            }) ;
+        });
+    </script>
+</body>
+</html>

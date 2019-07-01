@@ -1,0 +1,46 @@
+{
+    "pages": [
+        "pages/flex_Demo/flex_Demo",
+        "pages/index/index",
+        "pages/logs/logs",
+        "pages/demo/demo",
+        "pages/message/message",
+        "pages/profile/profile",
+        "pages/meishi/meishi"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#f60",
+        "navigationBarTitleText": "WeChat",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "position":"bottom",
+        "color": "#000000",
+        "selectedColor": "blue",
+        "list": [{
+            "pagePath": "pages/flex_Demo/flex_Demo",
+            "text": "首页",
+            "iconPath": "pages/assets/images/shouye.png",
+            "selectedIconPath": "pages/assets/images/shouye.png"
+        },
+        {
+            "pagePath": "pages/message/message",
+            "text": "消息",
+            "iconPath": "pages/assets/images/xiaoxi.png",
+            "selectedIconPath": "pages/assets/images/xiaoxi.png"
+            },
+            {
+                "pagePath": "pages/profile/profile",
+                "text": "个人中心",
+                "iconPath": "pages/assets/images/geren.png",
+                "selectedIconPath": "pages/assets/images/geren.png"
+            },
+            {
+                "pagePath": "pages/demo/demo",
+                "text": "更多",
+                "iconPath": "pages/assets/images/gengduo.png",
+                "selectedIconPath": "pages/assets/images/gengduo.png"
+            }]
+    }
+}

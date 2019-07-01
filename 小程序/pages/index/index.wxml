@@ -1,0 +1,26 @@
+<!--index.wxml-->
+<!-- 下一行代码使用view组建，构建样式为container的视图块 -->
+<view class="container">
+  <!--  下一行代码使用view组建，构建样式为userinfo的视图块， -->
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <!-- 下一行代码使用image组件，放置样式userinfo-avatar的图片，图片地址为变量userInfo.avatarUrl。
+            形如{{var}}的变量，即双大括号包含的动态数据变量，其值来自页面js文件中的打他对象
+       -->
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+
+  <!-- 添加demo页面的入口在展现并在其上绑定用户的点击事件 -->
+  <!-- <view id='tapTest' data-hi='MINA' bindtap='tapName'>click me!</view> -->
+  <view id='tapDemo' bindtap='bindViewDemo'>Demo页面</view>
+  
+  <!-- 添加新页面入口 -->
+  <view id='tapflex' bindtap='flexDemo'>Flex布局初体验</view>
+
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view>

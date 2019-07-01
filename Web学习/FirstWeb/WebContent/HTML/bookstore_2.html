@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>图书商城</title>
+<style type="text/css">
+	.clear{clear:both}/*清除浮动  */
+	#top_left{width:300px;float:left;margin-left:30px;}
+	#top_right{
+		width:400px;
+		float:right;
+		margin-top:15px;
+		font-size:13px;
+	}
+	#top_right img{margin-bottom:-5px;}
+	#top_right a{
+		text-decoration:none;
+		color:#06F;
+	}
+	#top_right a:hover{
+		color:#909;
+	}
+	#menu{
+		background-color:#1C3F09;
+		border-top:5px solid #82B211;
+		pandding:10px 0px;
+		text-align:center;
+	}
+	#menu a{margin:0 8px;
+		color:#fff;
+		text-decoration:none;
+		font-weight:bold;
+		font-size:15px;
+	}
+	#menu a:hover{
+		color:#999;
+	}
+	#menu .all{
+		color:yellow;
+	}
+	#search{
+		background-color:#B6B684;
+		padding:7px 0;
+		text-align:right;
+		
+		
+	}
+	#search input[type="image"]{
+		margin-right:250px;
+		margin-bottom:-4px;
+	}
+	#search input[type="text"]{
+		height:15px;
+		border:1px solid #999;
+	}
+	/*-----------------------  */
+	#content{
+		width:900px;
+		margin:8px auto 15px;/*上   div居中  下 */
+	}
+	#content_top{
+		text-align:right;
+		font-size:15px;
+	}
+	#content_bottom{
+		border:1px solid #999;
+		background-color:#FCFDEF;
+		padding:10px 15px;
+	}
+	#content_bottom h1{font-size:15px;display:inline}
+	#content_bottom span{font-size:13px;}
+	
+	#product_img img{width:100%;}
+	
+	.book{
+		float:left;
+		width:25%;
+		text-align:center;
+		padding:10px 0;
+	}
+	.bookimg img{width:130px;height:197px;}
+	
+	#jumppage{
+		text-align:center;
+		margin:10px;
+		
+	}
+	#jumppage a{
+		padding:2px 6px;;
+		border: 1px solid #9AAFE5;
+		text-decoration:none;
+		color:#9AAFE5;
+	}
+	#jumppage a:hover{
+		color:#2B66A5;
+		border: 1px solid #2B66A5;
+	}
+	.current{background-color:blue;}
+		
+	#bottom{
+		background-color:#EFEEDC;
+		height:80px;
+		padding:15px 0;
+	}
+	#bottom_left{
+		width:600px;
+		float:left;
+		margin-left:25px;
+	}
+	#bottom_right{
+		width:400px;
+		float:left;
+		line-height:28px;/* 文字行高 */
+	}
+
+</style>
+</head>
+<body>
+	<div id="page">
+		<div id="top">
+			<div id="top_left">
+				<img alt="logo" src="image/logo.png">
+			</div>
+			<div id="top_right">
+				<img alt="cart" src="image/cart.gif">
+				<a href="#" >购物车</a> |
+				<a href="#" >帮助中心</a> |
+				<a href="#" >我的用户</a> |
+				<a href="#" >新用户注册</a> |
+			</div>
+		</div>
+		<div class="clear"></div>
+		<div id="menu">
+			<a href="#">文学</font></a>
+			<a href="#">生活</font></a>
+			<a href="#">计算机</font></a>
+			<a href="#">外语</font></a>
+			<a href="#">励志</font></a>
+			<a href="#">社科</font></a>
+			<a href="#">学术</font></a>
+			<a href="#">少儿</font></a>
+			<a href="#">艺术</font></a>
+			<a href="#">原版</font></a>
+			<a href="#">科技</font></a>
+			<a href="#">考试</font></a>
+			<a href="#">生活百科</font></a>
+			<a href="#" class="all">全部商品目录</font></a>
+		</div>
+		<div id="search">
+			<span>Search</span>
+			<input type="text"/>
+			<input type="image" src="image/serchbutton.gif" alt="搜索"/>
+		</div>
+		<div id="content">
+			<div id="content_top">
+				<a href="#" style="text-decoration:none;color:#06F;">首页</a>
+				<span>&nbsp;&gt;旅游&nbsp;&gt;图书列表</span>
+			</div>
+			<div id="content_bottom">
+				<h1>商品目录</h1>
+				<hr/>
+				<h1>计算机类</h1>
+				<span>共100种商品</span>
+				<hr/>
+				<div id="productlist">
+					<div id="product_img">
+						<img alt="" src="image/productlist.gif">
+					</div>
+					<div id="booklist">
+						<div class="book">
+							<div class="bookimg">
+								<img alt="" src="image/101.jpg">
+							</div>
+							<div class="bookIntr">
+								<span>书名：xxx</span><br/>
+								<span>售价：xxx</span>
+							</div>
+						</div>
+						<div class="book">
+							<div class="bookimg">
+								<img alt="" src="image/102.jpg">
+							</div>
+							<div class="bookIntr">
+								<span>书名：xxx</span><br/>
+								<span>售价：xxx</span>
+							</div>
+						</div>
+						<div class="book">
+							<div class="bookimg">
+								<img alt="" src="image/103.jpg">
+							</div>
+							<div class="bookIntr">
+								<span>书名：xxx</span><br/>
+								<span>售价：xxx</span>
+							</div>
+						</div>
+						<div class="book">
+							<div class="bookimg">
+								<img alt="" src="image/104.jpg">
+							</div>
+							<div class="bookIntr">
+								<span>书名：xxx</span><br/>
+								<span>售价：xxx</span>
+							</div>
+						</div>
+						<div class="book">
+							<div class="bookimg">
+								<img alt="" src="image/105.jpg">
+							</div>
+							<div class="bookIntr">
+								<span>书名：xxx</span><br/>
+								<span>售价：xxx</span>
+							</div>
+						</div>
+						<div class="book">
+							<div class="bookimg">
+								<img alt="" src="image/106.jpg">
+							</div>
+							<div class="bookIntr">
+								<span>书名：xxx</span><br/>
+								<span>售价：xxx</span>
+							</div>
+						</div>
+						<div class="book">
+							<div class="bookimg">
+								<img alt="" src="image/107.jpg">
+							</div>
+							<div class="bookIntr">
+								<span>书名：xxx</span><br/>
+								<span>售价：xxx</span>
+							</div>
+						</div>
+						<div class="book">
+							<div class="bookimg">
+								<img alt="" src="image/108.jpg">
+							</div>
+							<div class="bookIntr">
+								<span>书名：xxx</span><br/>
+								<span>售价：xxx</span>
+							</div>
+						</div>
+						<div class="clear"></div>
+						<div id="jumppage">
+							<a href="#">上一页</a>
+							<a href="#" class="current">1</a>
+							<a href="#">2</a>
+							<a href="#">3</a>
+							<a href="#">4</a>
+							<a href="#">5</a>
+							<a href="#">6</a>
+							<a href="#">7</a>
+							<a href="#">下一页</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="bottom">
+			<div id="bottom_left">
+				<img alt="logo" src="image/logo.png">
+			</div>
+			<div id="bottom_right">
+				<span>郑州轻工业学院</span><br/>
+				<span>软件学院&copy;版权所有  翻版必究</span>
+			</div>
+		</div>
+	
+	</div>
+</body>
+</html>

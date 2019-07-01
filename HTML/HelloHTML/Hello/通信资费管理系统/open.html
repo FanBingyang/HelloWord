@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户管理</title>
+</head>
+<body bgcolor="#95BDFF">
+<hr size="1">
+<div align="center">
+    <form action="listUser.html" method="post" name="form1">
+        <table width="91%" align="center">
+            <tr>
+                <td width="14%" height="6">开通账户</td>
+                <td><a href="listUser.html">用户列表</a></td>
+                <td><div align="center">
+                    <font color="black">账务账号</font>
+                    <input type="text" name="textfield2" size="16">
+                    <input type="submit" value="查询">
+                </div></td>
+            </tr>
+        </table>
+    </form>
+    <hr size="1">
+    <p align="left">&nbsp;</p>
+    <center>
+        <h1>请输入用户的基本信息(带*的必须填写!)</h1>
+        <form action="listUser.html" method="post">
+            <table width="90%" border="1">
+                <tr>
+                    <td width="17%">账务账号*</td>
+                    <td width="83%"><input type="text" name="loginName">请输入用户的账务账号名称(只允许用英文,数字,下划线,区分大小写)</td>
+                </tr>
+                <tr>
+                    <td>账务密码*</td>
+                    <td><input type="password" name="pass">请输入用户的账务账号密码(限度为6-8位)</td>
+                </tr>
+                <tr>
+                    <td>重复密码*</td>
+                    <td><input type="password" name="pass2">请重复输入以上密码</td>
+                </tr>
+                <tr>
+                    <td>用户名称*</td>
+                    <td><input type="text" name="username">请输入用户真实姓名</td>
+                </tr>
+                <tr>
+                    <td>性别选项*</td>
+                    <td><input type="radio" name="nan" value="男" checked>男
+                        <input type="radio" name="nv" value="女">女</td>
+                </tr>
+                <tr>
+                    <td>付款方式*</td>
+                    <td>
+                        <select name="money">
+                            <option value="0" selected>现金支付</option>
+                            <option value="1">银行转账</option>
+                            <option value="2">邮局汇款</option>
+                            <option value="3">其他</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>用户状态*</td>
+                    <td>
+                        <input type="radio" value="1" name="1" checked>开通
+                        <input type="radio" name="2" value="3">暂停
+                    </td>
+                </tr>
+                <tr>
+                    <td>电子邮箱*</td>
+                    <td><input type="text" name="email">请输入正确的电子邮箱,以便于我们能及时跟你联系</td>
+                </tr>
+                <tr>
+                    <td height="56" colspan="2">
+                        <hr size="1">
+                        <p>以下是选填信息(请尽量填写)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>省份</td>
+                    <td>
+                        <select name="lity">
+                            <option value="1" selected>北京</option>
+                            <option value="2">天津</option>
+                            <option value="3">河北</option>
+                            <option value="4">上海</option>
+                            <option value="5">河南</option>
+                            <option value="6">吉林</option>
+                            <option value="7">黑龙江</option>
+                            <option value="8">内蒙古</option>
+                            <option value="9">山东</option>
+                            <option value="10">山西</option>
+                            <option value="11">陕西</option>
+                            <option value="12">甘肃</option>
+                            <option value="13">宁夏</option>
+                            <option value="14">青海</option>
+                            <option value="15">新疆</option>
+                            <option value="16">辽宁</option>
+                            <option value="17">江苏</option>
+                            <option value="18">浙江</option>
+                            <option value="19">安徽</option>
+                            <option value="20">广东</option>
+                            <option value="21">海南</option>
+                            <option value="22">广西</option>
+                            <option value="23">云南</option>
+                            <option value="24">贵州</option>
+                            <option value="25">四川</option
+                            <option value="26">重庆</option>
+                            <option value="27">西藏</option>
+                            <option value="28">香港</option>
+                            <option value="29">澳门</option>
+                            <option value="30">福建</option>
+                            <option value="31">江西</option>
+                            <option value="32">湖南</option>
+                            <option value="33">湖北</option>
+                            <option value="34">台湾</option>
+                            <option value="35">其他</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">个人职业:</td>
+                    <td>
+                        <select name="select" size="1">
+                            <option value="学生">学生</option>
+                            <option value="员工">员工</option>
+                            <option value="教师">教师</option>
+                            <option value="公务员">公务员</option>
+                            <option value="其他">其他</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>联系电话</td>
+                    <td><input type="text" name="">请输入用户电话</td>
+                </tr>
+                <tr>
+                    <td>公司</td>
+                    <td><input type="text" name="">请输入用户所在单位信息</td>
+                </tr>
+                <tr>
+                    <td>邮政编码</td>
+                    <td><input type="text" name="">请输入用户邮政编码</td>
+                </tr>
+            </table>
+            <p>
+                <input type="submit" value="提交">
+                <input type="reset" value="重置">
+            </p>
+        </form>
+    </center>
+</div>
+<center>版权所有 翻版必究</center>
+</body>
+</html>

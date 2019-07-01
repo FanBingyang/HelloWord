@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>边框菜单</title>
+    <style>
+        .box{
+            position: absolute;
+            /*width: 100px;*/
+            /*height: 100px;*/
+            /*盒子下走屏幕的一半*/
+            top: 50%;
+            /*盒子走自己高度的一半*/
+            transform: translate(0,-50%);
+            /*定义边框*/
+            border: 1px solid gray;
+            /*溢出隐藏*/
+            overflow: hidden;
+        }
+
+        .button{
+            width: 100px;
+            height: 100px;
+            background:url("right.png") no-repeat;
+            background-size: 100% 100%;
+        }
+        .menu{
+            position: absolute;
+            width: 300px;
+            height: 100%;
+
+
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <input type="button" value="" class="button"  onclick="button_onclick">
+    <script>
+     function button_onclick(){
+      //这里写你要执行的语句
+
+    alert("这是调用函数");
+     }
+</script>
+
+
+
+</div>
+</body>
+</html>

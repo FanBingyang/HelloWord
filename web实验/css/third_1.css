@@ -1,0 +1,54 @@
+.tssx{
+	font-family: "华文行楷";
+	font-size: 36px;
+	color: #600;
+	font-weight: bold;
+	font-style: italic;
+	text-align: center;
+}
+
+.jx{
+	font-size: 14px;
+	line-height: 200%;
+	text-indent: 30px;
+}
+
+.stm{
+	font-family: "楷体";
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.sr{
+	font-size: 14px;
+	text-align: center;
+}
+
+.sw{
+	font-family: "楷体";
+	font-size: 18px;
+	font-weight: bold;
+	text-align: center;	
+}
+
+.zs{
+	font-size: 14px;
+	line-height: 150%;
+}
+
+.wz{
+	font-size: 12px;
+	color: #666;
+	text-align: center;
+}
+
+body{
+	background-color: #FDF7E0;
+	background-image: url(../img/3.2.png);
+	background-size: 100% 90%;
+	background-repeat: no-repeat;
+	background-position: top;
+	margin-left: 50px;
+	margin-top: 50px;
+}

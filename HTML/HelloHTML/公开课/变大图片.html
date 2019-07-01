@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>变大图片</title>
+    <style>
+        div{
+            width: 403px;
+            height: 430px;
+            /*定义边框*/
+            border: 1px solid red;
+            margin: 100px auto;
+            /*溢出隐藏*/
+            overflow: hidden;
+        }
+        div img{
+            transition: all 1s;
+        }
+        /*鼠标经过，图片变大*/
+        div:hover img{
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+<div>
+    <img src="1.jpg" alt="" width="403px" height="430px">
+</div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 用resource属性加载外部配置文件 -->
+	<properties resource="jdbc.properties"/>
+	
+	<!-- 定义数据路连接属性，在properties内部用property定义属性
+		 如果外部配置文件有该属性，则内部定义属性被外部属性覆盖 
+	<properties resource="jdbc.properties">
+		<property name="jdbc.username" value="root"/>
+		<property name="jdbc.password" value="123456"/>
+	</properties> -->
+	
+	<!-- 别名 包以其子包下所有类   头字母大小都行-->
+	<typeAliases>
+		<!-- 单个定义别名 -->
+		<!-- <typeAlias type="pojo.User" alias="User"/> -->
+		<!-- 批量定义别名，扫描包下的类，别名为类名（大小写不敏感） -->
+		<package name="pojo"/>
+	</typeAliases>
+	
+	<!-- 
+		environments（环境集合属性对象）
+			environment（环境子属性对象）
+				transactionManager（事务管理）
+				dataSource（数据源）
+	 -->
+	<!-- 和spring整合后 environments配置将废除    -->
+	<environments default="development">
+		<environment id="development">
+			<!-- 使用jdbc事务管理 -->
+			<transactionManager type="JDBC" />
+			<!-- 数据库连接池 -->
+			<dataSource type="POOLED">
+				<property name="driver" value="${jdbc.driver}" />
+				<property name="url"
+					value="jdbc:mysql://localhost:3306/mybatis?characterEncoding=utf-8" />
+				<property name="username" value="root" />
+				<property name="password" value="123456" />
+			</dataSource>
+		</environment>
+	</environments>
+	
+	<!-- Mapper的位置，Mapper.xml写sql语句的文件的位置 -->
+	<!-- mappers：映射器，加载映射文件 -->
+	<mappers>
+		<!-- Mapper配置的几种方法 -->
+		
+		<!-- 使用相对于类路径的资源（现在的使用方式） -->
+		<!-- <mapper resource="sqlmap/User.xml"/> -->
+		
+		<!-- 使用mapper接口类路径 
+			***注意：此种方法要求mapper接口名称和mapper映射文件名称相同，且放在同一个目录中。-->
+		<!-- <mapper class="mapper.UserMapper"/> -->
+		
+		<!-- url属性映射的是xml的路径,和resource一样 -->
+		<!-- <mapper url="sqlmap/User.xml"/> -->
+		
+		
+		<!-- 注册指定包下的所有mapper接口 
+			***注意：此种方法要求mapper接口名称和mapper映射文件名称相同，且放在同一个目录中。-->
+		<package name="mapper"/>
+		
+	</mappers>	
+	
+	
+	
+</configuration>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>弹性盒布局</title>
+    <style>
+        section{
+            width: 80%;
+            height: 400px;
+            border: 1px solid red;
+            /*转换模式 flex 弹性 伸缩*/
+            display: flex;
+            /*主元素在主轴X轴显示 水平显示*/
+            /*flex-direction: row;*/
+            /*主元素在侧轴Y轴显示 竖直显示*/
+            flex-direction: column;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+        div:nth-child(2){
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+<section>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+</section>
+</body>
+</html>

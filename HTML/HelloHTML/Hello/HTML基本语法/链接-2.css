@@ -1,0 +1,6 @@
+p{
+    color: #FF3333;/*字体颜色*/
+    font-weight: bold;/*字体加粗*/
+    border-bottom: 3px dashed #009933;/*设置下边框线*/
+    line-height: 30px;/*设置标签行高*/
+}

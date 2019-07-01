@@ -1,0 +1,63 @@
+package BIXiangDongTV;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+/*
+ * 字符流：
+ * FileReader
+ * FileWriter
+ * 
+ * BufferedReader
+ * BufferedWriter
+ * 
+ * 字节流:
+ * InputStream  OutputStream
+ * 
+ * 需求：想要操作图片数据，这时就要用到字节流
+ */
+public class FileStream {
+
+	public static void main(String[] args) throws IOException{
+		// TODO Auto-generated method stub
+//		writeFile();
+		readFile_1();
+//		readFile_2();
+	}
+	
+	public static void readFile_2() throws IOException
+	{
+		FileInputStream fis = new FileInputStream("D:\\Java\\FileStream.txt");
+		
+		byte[] buf = new byte[1024];
+		int len = 0;
+		while((len=fis.read(buf))!=-1)
+		{
+			System.out.println(new String(buf,0,len));
+		}
+		fis.close();
+	}
+	public static void readFile_1() throws IOException
+	{
+		FileInputStream fis = new FileInputStream("D:\\Java\\FileStream.txt");
+		
+		int ch = 0;
+		while((ch=fis.read())!=-1)
+		{
+			System.out.println("ch="+(char)ch);
+		}
+		fis.close();
+	}
+	public static void writeFile() throws IOException
+	{
+		FileOutputStream fos = new FileOutputStream("D:\\Java\\FileStream.txt");
+		
+		fos.write("abcde".getBytes());//将字符串转成字节数组
+		
+		fos.close();
+		
+		
+	}
+
+}

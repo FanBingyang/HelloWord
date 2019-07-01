@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mapper.BaseDictMapper">
+
+    <resultMap id="BaseResultMap" type="pojo.BaseDict">
+        <result column="vet_major" property="vetMajor" jdbcType="VARCHAR" />
+        <result column="pet_kind" property="petKind" jdbcType="VARCHAR" />
+    </resultMap>
+
+<!--    //查询出医生的专业-->
+<!--    List<BaseDict> selectVetMajor();-->
+    <select id="selectVetMajor" resultMap="BaseResultMap">
+        select distinct vet_major from vet
+    </select>
+
+<!--    //查询出动物的种类-->
+<!--    List<BaseDict> selectPetKind();-->
+    <select id="selectPetKind" resultMap="BaseResultMap">
+        select distinct pet_kind from pet
+    </select>
+
+    <!--//登录判断-->
+    <!--User loginUser(User user);-->
+    <select id="getUser" parameterType="User" resultType="User">
+        select * from user where user_name = #{userName} and password =  #{password}
+    </select>
+
+</mapper>

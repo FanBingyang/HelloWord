@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mapper.IllMapper" >
+    <resultMap id="BaseResultMap" type="pojo.Ill" >
+        <result column="pet_name" property="petName" jdbcType="VARCHAR" />
+        <result column="pet_kind" property="petKind" jdbcType="VARCHAR" />
+        <result column="client_name" property="clientName" jdbcType="VARCHAR" />
+        <result column="vet_name" property="vetName" jdbcType="VARCHAR" />
+        <result column="vet_major" property="vetMajor" jdbcType="VARCHAR" />
+        <result column="illness" property="illness" jdbcType="VARCHAR" />
+        <result column="tim" property="tim" jdbcType="VARCHAR" />
+    </resultMap>
+    <sql id="Base_Column_List" >
+        pet_name, client_name, vet_name, vet_major, illness, tim
+    </sql>
+
+    <!--//添加病例-->
+    <!--void insertIll(Ill ill);-->
+    <insert id="insertIll" parameterType="Ill">
+        insert into ill
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="petName != null" >
+                pet_name,
+            </if>
+            <if test="petKind != null">
+                pet_kind,
+            </if>
+            <if test="clientName != null" >
+                client_name,
+            </if>
+            <if test="vetName != null" >
+                vet_name,
+            </if>
+            <if test="vetMajor != null" >
+                vet_major,
+            </if>
+            <if test="illness != null" >
+                illness,
+            </if>
+            <if test="tim != null" >
+                tim,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="petName != null" >
+                #{petName,jdbcType=VARCHAR},
+            </if>
+            <if test="petKind != null">
+                #{petKind,jdbcType=VARCHAR},
+            </if>
+            <if test="clientName != null" >
+                #{clientName,jdbcType=VARCHAR},
+            </if>
+            <if test="vetName != null" >
+                #{vetName,jdbcType=VARCHAR},
+            </if>
+            <if test="vetMajor != null" >
+                #{vetMajor,jdbcType=VARCHAR},
+            </if>
+            <if test="illness != null" >
+                #{illness,jdbcType=VARCHAR},
+            </if>
+            <if test="tim != null" >
+                #{tim,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+    <!--//按条件查询病例-->
+    <!--List<Ill> selectIll(Ill ill);-->
+    <select id="selectIll" parameterType="Ill" resultMap="BaseResultMap">
+        select * from ill
+        <where>
+            <if test="petName != null and petName != ''" >
+                pet_name like "%"#{petName,jdbcType=VARCHAR}"%"
+            </if>
+            <if test="petKind != null and petKind != ''">
+                and pet_kind = #{petKind,jdbcType=VARCHAR}
+            </if>
+            <if test="clientName != null and clientName != ''" >
+                and client_name like "%"#{clientName,jdbcType=VARCHAR}"%"
+            </if>
+            <if test="vetName != null and vetName != ''" >
+                and vet_name like "%"{vetName,jdbcType=VARCHAR}"%"
+            </if>
+            <if test="vetMajor != null and vetMajor != ''" >
+                and vet_major = #{vetMajor,jdbcType=VARCHAR}
+            </if>
+            <if test="tim != null and tim != ''" >
+                and tim = like "%"#{tim,jdbcType=VARCHAR}"%"
+            </if>
+        </where>
+    </select>
+    
+    <!--//按条件删除病例-->
+    <!--void deleteIll(Ill ill);-->
+
+
+</mapper>

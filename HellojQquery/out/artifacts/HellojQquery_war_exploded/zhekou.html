@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="js/jquery-3.3.1.min.js"></script>
+<style>
+    div{
+        float: left;
+        height: 245px;
+        text-align: left;
+        border: solid #000 3px;
+    }
+    #header{
+        width: 100%;
+        border: 0px;
+        height: 50px;
+    }
+    #main{
+        background-color: grey;
+        height: 500px;
+    }
+    img{
+        width: 120px;
+        height: 200px;
+    }
+    .guess_box{
+        height: 245px;
+    }
+    
+</style>
+<body>
+    <div id="header">
+        <h2 align="left">热销书榜</h2>
+    </div>
+    <div id="main">
+        <div class="guess_box"><img src="img/book_1.jpg"></div>
+        <div class="guess_box"><img src="img/book_2.jpg"></div>
+        <div class="guess_box"><img src="img/book_3.jpg"></div>
+        <div class="guess_box"><img src="img/book_4.jpg"></div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+           $(".guess_box").click(function () {
+               $(".guess_box p").remove();//将该元素从页面中移除
+                var discount = Math.floor((Math.random()*5) + 5);//random方法返回一个0到1之间的随机数，flor将一个数取整为最接近的整数返回
+                var discount_msg = "<p>你的折扣是"+discount+"折</p>";
+               $(this).append(discount_msg);//将元素添加到页面中。this代表当前元素，也就是 .guess_box p
+               $(this).unbind("click");//解除当前事件监听的绑定，不再对其进行监听
+
+               // $(".guess_box").unbind("click");//解除所有".guess_box"元素的监听
+
+               //使用遍历挨个为".guess_box"解除事件绑定，效果同上
+              /*$(".guess_box").each(function () {
+                  $(this).unbind("click");
+              }) ;*/
+           });
+        });
+    </script>
+</body>
+</html>
+<!--
+$("#main").bind("click",function(){
+        alert("为 #main元素绑定一个click事件");
+});
+$("#main").unbind("click");//为#main元素解除事件绑定
+-->

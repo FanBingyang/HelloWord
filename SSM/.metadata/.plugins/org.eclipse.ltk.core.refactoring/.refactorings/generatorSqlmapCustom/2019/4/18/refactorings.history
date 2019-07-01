@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 packages to &apos;SpringMvc-Mybati/src&apos;&#x0D;&#x0A;- Original project: &apos;generatorSqlmapCustom&apos;&#x0D;&#x0A;- Destination element: &apos;SpringMvc-Mybati/src&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     generatorSqlmapCustom/src/mapper&#x0D;&#x0A;     generatorSqlmapCustom/src/pojo" description="Copy packages" destination="=SpringMvc-Mybati/src" element1="/src&lt;mapper" element2="/src&lt;pojo" flags="589830" fragments="2" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1556453863747" version="1.0"/>
+</session>

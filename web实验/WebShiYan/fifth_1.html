@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery的DOM操作--元素和属性</title>
+		<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("#btnp").click(function(){
+					alert($("#ptest").html());
+				});
+				$("#btntxt").click(function(){
+					alert($("#txt").val());
+				});
+				$("#btna").click(function(){
+					alert($("#aid").attr("href"));
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<p>点击按钮获得下面p标签的文字内容</p>
+		<p id="ptest">This is a DOM test.<a href="http://www.zzuli.edu.cn" id="aid">郑州轻工业学院官网</a></p>
+		<button id="btnp">click</button><br/>
+		<p>点击按钮获得文本框中的值</p>
+		<input type="text" id="txt" >
+		<button id="btntxt">get text words</button><br/>
+		<p>点击按钮获得超链接的href属性</p>
+		<button id="btna">get a href</button>
+	</body>
+</html>

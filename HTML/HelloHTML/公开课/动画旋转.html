@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画旋转</title>
+    <style>
+        img{
+            margin: 100px auto;
+            display: block;
+            /*1,使用动画*//*linear匀速*/
+            animation: rota 1s linear infinite;
+        }
+        /*2,定义动画*/
+        @keyframes rota {
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<img src="1.jpg" alt="" width="200px" height="200px">
+</body>
+</html>

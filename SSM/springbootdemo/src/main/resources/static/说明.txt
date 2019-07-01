@@ -1,0 +1,10 @@
+在springboot工程里面是没有web文件夹的，所以没有传统工程存放静态资源的文件夹。
+在这个工程里它自动扫描静态资源的文件夹有下面这些
+"classpath:/META-INF/resources/"
+"classpath:/resources/",
+"classpath:/static/"
+"classpath:/public/"
+
+而项目默认创建的resources文件夹就是一个classspath，所以直接在这下面建立对应的
+文件夹存放静态资源即可。为了不与原有的resources文件夹出现同名，一般新建static
+文件夹用来存放静态资源。

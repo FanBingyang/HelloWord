@@ -1,0 +1,42 @@
+<view class='shop'>
+    <image class='shop-img' src='https://p1.meituan.net/200.0/deal/6dd300da57db815029cd191b1d5ca490107806.jpg@166_0_668_668a%7C267h_267w_2e_90q'></image>
+    <view class='shop-info'>
+        <text class='shop-title'>王婆大虾</text>
+        <text class='shop-tel'>电话：121121123</text>
+        <text class='shop-adress'>地址:郑州轻工业大学西门</text>
+        <text class='shop-time'>营业时间：全天</text>
+    </view>
+    <!-- 评分打星通过两层视图重叠，控制显示上下层的颜色和上层的显示大小来           达到想要的效果 -->
+    <view class='shop-star'>
+        <view class='star-after'>★★★★★</view>
+        <view class='star-before'>★★★★★</view>
+    </view>
+</view>
+<view class='shop'>
+    <image class='shop-img' src='https://p0.meituan.net/200.0/deal/4557f4200f50bd6b1a9b9e53c7302fb556054.jpg@161_0_527_527a%7C267h_267w_2e_90Q'></image>
+    <view class='shop-info'>
+        <text class='shop-title'>汉堡店</text>
+        <text class='shop-tel'>电话：121121123</text>
+        <text class='shop-adress'>地址:郑州轻工业大学西门</text>
+        <text class='shop-time'>营业时间：全天</text>
+    </view>
+    <view class='shop-star'>
+        <view class='star-after'>★★★★</view>
+        <view class='star-before'>★★★★</view>
+    </view>
+</view>
+<view class='shop'>
+    <image class='shop-img' src='https://p0.meituan.net/200.0/deal/c6133983d70be2239c28cf97e6afb88d49132.jpg@126_0_450_450a%7C267h_267w_2e_100q'></image>
+    <view class='shop-info'>
+        <text class='shop-title'>鱼粉</text>
+        <text class='shop-tel'>电话：121121123</text>
+        <text class='shop-adress'>地址:郑州轻工业大学西门</text>
+        <text class='shop-time'>营业时间：全天</text>
+    </view>
+    <view class='shop-star'>
+        <view class='star-after'>★★★</view>
+        <!-- 可以在此设置行内样式，行内样式优先级最高 -->
+        <view class='star-before' style='width:80%'>★★★</view>
+    </view>
+</view>
+<view class='loadmore loading'>正在加载...</view>

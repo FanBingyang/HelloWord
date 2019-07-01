@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd ">
+	
+	<!-- spring的分模块配置
+		用import导入其他spring配置文件
+	 -->
+	<import resource="/Spring_01/src/applicationContext.xml"/>
+	
+	<!--   scope属性：
+		 	singleton：单例对象，被标识为单例的对象再spring容器中只会存在一个实例，一般情况下都选择默认（重点掌握）
+		 	prototype：多例原型，被标识为多例的对象，每次在获得才会创建，每次创建的都是新的对象，只有在整合struts2时，ActionBean必须配置为多例的（重点掌握）
+		 	request：web环境下，对象与request生命周期一致（基本不用）
+		 	session：web环境下，对象与session生命周期一致（基本不用）
+	-->
+	<!-- 
+		    生命周期属性：
+		    init-method="init"，配置一个方法作为生命周期初始化方法，spring会在对象创建之后立即调用
+		    destroy-method="destroy"，配置一个方法作为生命周期销毁方法，springhi容器在关闭并销毁所有容器中的对象之前调用
+	-->
+	<!-- 创建方式1：空参构造创建-->
+	<bean name="user" class="bean.User" scope="singleton" init-method="init" destroy-method="destroy"></bean>
+	
+	<!-- 创建方式2：静态工厂创建 
+		 调用UserFactory的createUser方法创建名为user2的对象，放入容器
+	-->
+	<bean name="user2" class="Test_create.UserFactory" factory-method="createUser"></bean>
+	
+	<!-- 创建方式3：实例工厂创建
+		 调用UserFactory对象的createUser2方法创建名为user3的对象，放入容器
+		  -->
+	<bean name="user3" factory-method="createUser2" factory-bean="userFactory"></bean>
+	<bean name="userFactory" class="Test_create.UserFactory"></bean>
+
+</beans>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 3 elements to &apos;SpringMvc-Mybati/src&apos;&#x0D;&#x0A;- Original project: &apos;Mybatis-Spring&apos;&#x0D;&#x0A;- Destination element: &apos;SpringMvc-Mybati/src&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     sqlMapConfig.xml&#x0D;&#x0A;     db.properties&#x0D;&#x0A;     applicationContext.xml" description="Copy files" destination="=SpringMvc-Mybati/src" element1="src/sqlMapConfig.xml" element2="src/db.properties" element3="src/applicationContext.xml" files="3" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1556453144060" units="0" version="1.0"/>
+</session>

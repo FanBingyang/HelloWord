@@ -1,0 +1,18 @@
+package BIXiangDongTV;
+
+import java.io.Reader;
+
+public class MyLineNumberReader {
+	private Reader r;
+	private int lineNumber;
+	
+	MyLineNumberReader(Reader r)
+	{
+		this.r = r;
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

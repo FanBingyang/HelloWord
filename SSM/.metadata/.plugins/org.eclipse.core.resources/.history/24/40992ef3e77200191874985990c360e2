@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mapper.VetMapper" >
+    <resultMap id="BaseResultMap" type="pojo.Vet" >
+        <id column="vet_id" property="vetId" jdbcType="INTEGER" />
+        <result column="vet_name" property="vetName" jdbcType="VARCHAR" />
+        <result column="vet_sex" property="vetSex" jdbcType="VARCHAR" />
+        <result column="vet_age" property="vetAge" jdbcType="VARCHAR" />
+        <result column="vet_tel" property="vetTel" jdbcType="VARCHAR" />
+        <result column="vet_major" property="vetMajor" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <sql id="Base_Column_List" >
+    vet_id, vet_name, vet_sex, vet_age, vet_tel, vet_major
+  </sql>
+
+
+  <!--//根据id删除医生-->
+  <!--void deleteVetById(Integer vetId);-->
+    <delete id="deleteVetById" parameterType="Integer">
+        delete from vet
+        where vet_id = #{vetId}
+    </delete>
+
+  <!-

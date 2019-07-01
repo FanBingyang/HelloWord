@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片滑入</title>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <style type="text/css">
+        #clickMe{
+            background: #D8B36E;
+            padding: 20px;
+            text-align: center;
+            width: 205px;
+            display: block;
+            border: 2px solid #000;
+        }
+        #pircframe {
+            background: #D8B36E;
+            padding: 20px;
+            width: 205px;
+            display: none;
+            border: 2px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <div id="clickMe">点击一下试试</div>
+    <div id="pircframe">
+        <img src="img/2.jpg" alt="图片" width="200" >
+    </div>
+
+    <script>
+        $(document).ready(function () {
+           $("#clickMe").click(function () {
+               $("img").fadeIn(1000);//元素淡出淡入,参数为完成时间，单位是毫秒
+               $("#pircframe").slideToggle("slow");//元素如果朝上就向下滑动，反之则相反，缓慢进行
+           });
+           $("#clickMe").slideUp(500);//慢慢将元素高度变为0，然后隐藏,参数为完成时间，单位是毫秒
+           $("#clickMe").slideDown(500);//慢慢将元素高度从0改为css样式中设置的高度,参数为完成时间，单位是毫秒
+        });
+    </script>
+</body>
+</html>

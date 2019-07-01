@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改会员信息</title>
+</head>
+<body>
+<div align="center">
+    <form action="lookMember.html" method="post">
+        <table border="2" align="center">
+            <tr><th colspan="2" align="center">输入要修改的会员信息</th></tr>
+            <tr>
+                <td>会员名称:</td>
+                <td><input type="text" name="memberName"/></td>
+            </tr>
+            <tr>
+                <td>会员密码:</td>
+                <td><input type="password" name="password"/></td>
+            </tr>
+            <tr>
+                <td>会员性别:</td>
+                <td>
+                    <input type="radio" name="radiobutton"/>男
+                    <input type="radio" name="radiobutton"/>女
+                </td>
+            </tr>
+            <tr>
+                <td>会员邮箱:</td>
+                <td><input type="text" name="email"/></td>
+            </tr>
+            <tr>
+                <td>会员电话;</td>
+                <td><input type="text" name="memberTel"/></td>
+            </tr>
+            <tr>
+                <td>会员简历:</td>
+                <td><textarea rows="16" cols="22"></textarea></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="修改"></td>
+                <td><input type="reset" value="重置"></td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>

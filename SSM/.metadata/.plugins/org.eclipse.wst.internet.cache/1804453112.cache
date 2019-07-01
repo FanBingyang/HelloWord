@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=GB2312" /> 
+<title></title> 
+</head> 
+<body> 
+<!--Dr.COMWebLoginID_0.htm-->
+<script type="text/javascript"> 
+sv=0;sv1=0;v6='http://[::]:9002/v6                                     ';myv6ip='                                       ';v4serip='10.30.1.19'     ;m46=0;v46ip='10.85.16.12'                            ;
+vid=0   ;mip=010085016012;Gno=0000;vlanid="0"   ;AC="";                          ipm="0a1e0113";ss1="000d482ab550";ss2="0000";ss3="0a55100c";ss4="000000000000";ss5="10.85.16.12"    ;ss6="10.30.1.19"     ;timet=1553328717; 
+
+authexenable=0;
+authtype=1;
+authloginport=80;
+authloginpath='';
+authloginparam='';
+authlogoutpath='';
+authlogoutport=80;
+queryport=80;
+isquery=0;
+querypath='';
+queryparam='';
+authhost='';
+authoffpost='';
+authsuccess='Dr.COMWebLoginID_3.htm';
+authuserfield='DDDDD';
+authpassfield='upass';
+
+portalid='HN0300219_000';
+serialno='';
+portalname='郑州轻工业学院';
+logourl='';
+bannerurl='';
+welcome='';
+businessurl='';
+portalver='0010300000';
+
+var reg = new RegExp("(^|&)drcomver([^&]*)(&|$)", "i");
+var r = window.location.search.substr(1).match(reg);
+if(r != null)
+{
+	document.write("portalname="+portalname+"<br>");
+	document.write("portalide="+portalid+"<br>");
+	document.write("portalver="+portalver+"<br>");
+}
+
+window.location='http://user.zzuli.edu.cn/'
+</script> 
+<div>您的设备已经禁止JAVASCRIPT<br>
+     请点击<a href="http://user.zzuli.edu.cn/">这里</a>进入<br>
+</body> 
+</html>

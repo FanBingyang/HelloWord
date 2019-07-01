@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mapper.VetMapper" >
+  <resultMap id="BaseResultMap" type="pojo.Vet" >
+    <id column="vet_id" property="vetId" jdbcType="INTEGER" />
+    <result column="vet_name" property="vetName" jdbcType="VARCHAR" />
+    <result column="vet_sex" property="vetSex" jdbcType="VARCHAR" />
+    <result column="vet_age" property="vetAge" jdbcType="VARCHAR" />
+    <result column="vet_tel" property="vetTel" jdbcType="VARCHAR" />
+    <result column="vet_major" property="vetMajor" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    vet_id, vet_name, vet_sex, vet_age, vet_tel, vet_major
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="pojo.VetExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from vet
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from vet
+    where vet_id = #{vetId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from vet
+    where vet_id = #{vetId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="pojo.VetExample" >
+    delete from vet
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="pojo.Vet" >
+    insert into vet (vet_id, vet_name, vet_sex, 
+      vet_age, vet_tel, vet_major
+      )
+    values (#{vetId,jdbcType=INTEGER}, #{vetName,jdbcType=VARCHAR}, #{vetSex,jdbcType=VARCHAR}, 
+      #{vetAge,jdbcType=VARCHAR}, #{vetTel,jdbcType=VARCHAR}, #{vetMajor,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="pojo.Vet" >
+    insert into vet
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="vetId != null" >
+        vet_id,
+      </if>
+      <if test="vetName != null" >
+        vet_name,
+      </if>
+      <if test="vetSex != null" >
+        vet_sex,
+      </if>
+      <if test="vetAge != null" >
+        vet_age,
+      </if>
+      <if test="vetTel != null" >
+        vet_tel,
+      </if>
+      <if test="vetMajor != null" >
+        vet_major,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="vetId != null" >
+        #{vetId,jdbcType=INTEGER},
+      </if>
+      <if test="vetName != null" >
+        #{vetName,jdbcType=VARCHAR},
+      </if>
+      <if test="vetSex != null" >
+        #{vetSex,jdbcType=VARCHAR},
+      </if>
+      <if test="vetAge != null" >
+        #{vetAge,jdbcType=VARCHAR},
+      </if>
+      <if test="vetTel != null" >
+        #{vetTel,jdbcType=VARCHAR},
+      </if>
+      <if test="vetMajor != null" >
+        #{vetMajor,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="pojo.VetExample" resultType="java.lang.Integer" >
+    select count(*) from vet
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update vet
+    <set >
+      <if test="record.vetId != null" >
+        vet_id = #{record.vetId,jdbcType=INTEGER},
+      </if>
+      <if test="record.vetName != null" >
+        vet_name = #{record.vetName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.vetSex != null" >
+        vet_sex = #{record.vetSex,jdbcType=VARCHAR},
+      </if>
+      <if test="record.vetAge != null" >
+        vet_age = #{record.vetAge,jdbcType=VARCHAR},
+      </if>
+      <if test="record.vetTel != null" >
+        vet_tel = #{record.vetTel,jdbcType=VARCHAR},
+      </if>
+      <if test="record.vetMajor != null" >
+        vet_major = #{record.vetMajor,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update vet
+    set vet_id = #{record.vetId,jdbcType=INTEGER},
+      vet_name = #{record.vetName,jdbcType=VARCHAR},
+      vet_sex = #{record.vetSex,jdbcType=VARCHAR},
+      vet_age = #{record.vetAge,jdbcType=VARCHAR},
+      vet_tel = #{record.vetTel,jdbcType=VARCHAR},
+      vet_major = #{record.vetMajor,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="pojo.Vet" >
+    update vet
+    <set >
+      <if test="vetName != null" >
+        vet_name = #{vetName,jdbcType=VARCHAR},
+      </if>
+      <if test="vetSex != null" >
+        vet_sex = #{vetSex,jdbcType=VARCHAR},
+      </if>
+      <if test="vetAge != null" >
+        vet_age = #{vetAge,jdbcType=VARCHAR},
+      </if>
+      <if test="vetTel != null" >
+        vet_tel = #{vetTel,jdbcType=VARCHAR},
+      </if>
+      <if test="vetMajor != null" >
+        vet_major = #{vetMajor,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where vet_id = #{vetId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="pojo.Vet" >
+    update vet
+    set vet_name = #{vetName,jdbcType=VARCHAR},
+      vet_sex = #{vetSex,jdbcType=VARCHAR},
+      vet_age = #{vetAge,jdbcType=VARCHAR},
+      vet_tel = #{vetTel,jdbcType=VARCHAR},
+      vet_major = #{vetMajor,jdbcType=VARCHAR}
+    where vet_id = #{vetId,jdbcType=INTEGER}
+  </update>
+</mapper>

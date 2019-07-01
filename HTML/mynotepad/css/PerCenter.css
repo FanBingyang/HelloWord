@@ -1,0 +1,109 @@
+.bg_bottom{
+	height: 50px;
+	width: 100%;
+	background-color: gray;
+	overflow: hidden;
+}
+/*左菜单*/
+#left{
+	float: left;
+	margin-left: 200px;
+	margin-top: 30px;
+	height: 530px;
+	
+}
+.menu{
+	padding: 0px;
+	list-style: none;/*去掉列表前缀*/
+	border: solid 0.3px #e0e0e0;
+}
+.menu li{
+	font-size: 20px;
+	background-color: #fdfdfd;
+	width: 200px;
+	height: 60px;
+	text-align: center;
+	line-height: 3;/*行高*/
+	
+}
+.menu li:hover{
+	background-color: skyblue;
+	color: white;
+}
+
+/*右边*/
+#right{
+	/*float: left;*/
+	position: absolute;
+	left: 405px;
+	margin-top: 46px;
+	width: 900px;
+	height: 486px;
+	background-color: white;
+	border: solid 0.3px #e0e0e0;
+}
+/*右边标题*/
+h3{
+	margin-top: 30px;
+	margin-left:40px;
+}
+/*右边头像区*/
+#right_tx{
+	float: left;
+	width: 170px;
+	height: 400px;
+	margin-top: 10px;
+	/*background-color: pink;*/
+}
+#tx{
+	width: 110px;
+	height: 110px;
+	margin-left: 40px;
+	margin-top: 20px;
+	border-radius: 50%;
+	border: solid 1px black;
+}
+/*右边个人信息区*/
+#right_xinxi{
+	float: left;
+	width: 660px;
+	height: 400px;
+	margin-top: 10px;
+	/*background-color: paleturquoise;*/
+}
+.table{
+	/*border: solid 1px red;*/
+	text-align: center;
+	margin-top: 20px;
+	width: 300px;
+	height: 200px;
+	font-size: 20px;
+}
+.text{
+	border-radius: 5px;/*设置圆角*/
+	width: 200px;
+	height: 30px;
+	/*margin-left:100px;*/
+	/*background-color: #efefef;*/
+	font-size: 20px;
+}
+tr{
+	height: 50px;
+}
+
+#submit{
+	/*margin-left: 200px;*/
+	width: 150px;
+	height: 50px;
+	background-color: white;
+	border: solid 1px red;
+	font-size: 17px;
+	color: red;
+	border-radius: 5px;/*设置圆角*/
+}
+
+
+hr{
+	color: #fcfcfc;
+	margin: 0px;
+}

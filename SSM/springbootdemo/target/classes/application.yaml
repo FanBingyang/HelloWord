@@ -1,0 +1,36 @@
+#
+#jdbc:
+#  driverClassName: com.mysql.jdbc.Driver
+#  url:jdbc: mysql://localhost:3306/springboot?characterEncoding=utf-8
+#  username: root
+#  password: 123456
+
+#修改端口号
+#server:
+#  port: 8088
+#配置拦截器，默认的是 / ，拦截所有，因为不识别*，所以要用字符串
+#  servlet:
+#    path: "*.html"
+
+#控制日志级别,因为level配置绑定的是集合，所以是键值对，前面是包名
+logging:
+  level:
+    cn.edu.zzuli: debug
+
+# 配置数据库连接,8.0以上的版本再写法上有些不一样，以下是新版写法
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springboot?characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password: 123456
+
+#配置mybatis
+mybatis:
+#开启mybatis自动驼峰匹配
+#  configuration:
+#    map-underscore-to-camel-case: true
+# 配置别名扫描包
+  type-aliases-package: cn.edu.zzuli.pojo
+#    扫描mapper的xml文件
+#  mapper-locations: mapper/*.xml

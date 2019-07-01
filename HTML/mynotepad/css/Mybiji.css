@@ -1,0 +1,91 @@
+.bg_bottom{
+	height: 50px;
+	width: 100%;
+	background-color: #58abed;
+	overflow: hidden;
+}
+/*左菜单*/
+#left{
+	float: left;
+	margin-left: 200px;
+	margin-top: 30px;
+	height: 530px;
+	
+}
+.menu{
+	padding: 0px;
+	list-style: none;/*去掉列表前缀*/
+	border: solid 0.3px #e0e0e0;
+}
+.menu li{
+	font-size: 20px;
+	background-color: #fdfdfd;
+	width: 200px;
+	height: 60px;
+	text-align: center;
+	line-height: 3;/*行高*/
+	
+}
+.menu li:hover{
+	background-color: skyblue;
+	color: white;
+}
+
+/*右边*/
+#right{
+	float: left;
+	/*position: absolute;*/
+	left: 405px;
+	margin-top: 46px;
+	margin-bottom: 20px;
+	width: 900px;
+	min-height: 486px;
+	background-color: white;
+	border: solid 0.3px #e0e0e0;
+}
+
+/*右边标题*/
+h3{
+	float: left;
+	margin-top: 30px;
+	margin-left:40px;
+}
+
+/*按标签分类查看的div*/
+.lablecha{
+	float: right;
+	margin-top: 35px;
+	margin-right: 42px;
+}
+
+/*查看全部笔记*/
+.all{
+	font-weight:500;
+}
+.all:hover{
+	color: #d30002;
+}
+
+/*标签分类的文本框*/
+.chazhao{
+	width: 80px;
+	height: 20px;
+	margin-right: -2px;
+}
+
+
+.table{
+	/*border: solid 1px red;*/
+	/*将表格边框合并为单一的边框*/
+	border-collapse: collapse;
+	width: 818px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	font-size: 20px;
+	text-align: center;
+}
+
+hr{
+	color: #fcfcfc;
+	margin: 0px;
+}

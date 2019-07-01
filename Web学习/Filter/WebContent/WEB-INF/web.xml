@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  
+  <error-page>
+  	<error-code>404</error-code>
+  	<location>/error.jsp</location>
+  </error-page>
+  
+  <filter>
+    <filter-name>MyFilterConfigTest</filter-name>
+    <filter-class>filter.MyFilterConfigTest</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>MyFilterConfigTest</filter-name>
+    <url-pattern>/servletDemo1</url-pattern>
+  </filter-mapping>
+  <filter>
+  	<filter-name>MyFilter3</filter-name>
+  	<filter-class>filter.MyFilter3</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>MyFilter3</filter-name>
+  	<url-pattern>/*</url-pattern>
+  	<dispatcher>FORWARD</dispatcher>
+  	<dispatcher>REQUEST</dispatcher>
+  	<dispatcher>ERROR</dispatcher>
+  </filter-mapping>
+  
+  
+  
+  <display-name>Filter</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

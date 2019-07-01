@@ -1,0 +1,18 @@
+1.导入约束
+	Window-->Preferences-->搜索cata，找到XML Catalog-->add-->找到本机的mybatis-3-config.dtd
+	-->Key type-->URI-->Key对应的文本框复制上该约束的下载地址http://mybatis.org/dtd/mybatis-3-mapper.dtd
+	-->ok-->关闭xml文件重新打开即可有代码提示
+	
+	新建xml文件引用头为：
+	<?xml version="1.0" encoding="UTF-8" ?>
+	<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+导入mybatis-3-mapper.dtd约束，步骤同上，只不过在key文本框中复制http://mybatis.org/dtd/mybatis-3-config.dtd
+	新建xml文件引用头为：
+	<?xml version="1.0" encoding="UTF-8" ?>
+	<!DOCTYPE configuration
+	PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+	

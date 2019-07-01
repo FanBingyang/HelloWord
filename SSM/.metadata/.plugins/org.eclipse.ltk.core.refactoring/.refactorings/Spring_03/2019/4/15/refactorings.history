@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 elements to &apos;lib&apos;&#x0D;&#x0A;- Original project: &apos;Spring_03&apos;&#x0D;&#x0A;- Destination element: &apos;lib&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     com.springsource.org.aopalliance-1.0.0.jar&#x0D;&#x0A;     com.springsource.org.aspectj.weaver-1.6.8.RELEASE.jar" description="Copy files" element1="WebContent/WEB-INF/lib/com.springsource.org.aopalliance-1.0.0.jar" element2="WebContent/WEB-INF/lib/com.springsource.org.aspectj.weaver-1.6.8.RELEASE.jar" files="2" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1554604821116" target="/Spring_03tx/WebContent/WEB-INF/lib" units="0" version="1.0"/>
+</session>

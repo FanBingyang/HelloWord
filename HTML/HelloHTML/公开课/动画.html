@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画</title>
+    <style>
+        div{
+            width: 150px;
+            height: 150px;
+            background-color: pink;
+            /*1,使用动画  run是动画名称,3s是持续时间 2是播放次数(infinite表示无数次)*/
+            animation: run 3s 2;
+        }
+        /*动画:   animation: 动画名 花费时间 */
+        /*2,定义动画  帧动画   keyframs 关键帧*/
+        @keyframes run {
+            0% { /*开始*/
+                transform: translate(0);/*起始位置*/
+            }
+            100%{/*结束*/
+                transform: translate(500px);/*最终位置*/
+            }
+        }
+    </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>

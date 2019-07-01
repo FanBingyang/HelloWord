@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>21点游戏</title>
+    <style type="text/css">
+        #controls{clear: both;}
+        #my_hand{
+            clear: both;
+            border: 1px solid gray;
+            height: 165px;
+            width: 1650px;
+        }
+        h3{display: inline;padding-right: 40px;}
+        .current_hand{float: left;}
+        #btnHit,#btnStick,#btnRestart{display: none;float: left;}
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h1>Click to reveal your cards</h1>
+        <h3 id="hdrTotal"></h3><h3 id="hdrResult"></h3>
+        <div id="my_hand"></div>
+        <div id="controls">
+            <div id="btnDeal">
+                btnDeal<img src="img/cards/puke.jpg" width="160" height="160">
+            </div>
+            <div id="btnHit">
+                btnHit<img src="img/cards/puke.jpg" width="160" height="160">
+            </div>
+            <div id="btnStick">
+                btnStick<img src="img/cards/puke.jpg" width="160" height="160">
+            </div>
+            <div id="btnRestart">
+                btnRestart<img src="img/cards/puke.jpg" width="160" height="160">
+            </div>
+            <div id="result"><img src="img/cards/puke.jpg" width="160" height="160" id="imgResult"></div>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/21dian.js"></script>
+</body>
+</html>

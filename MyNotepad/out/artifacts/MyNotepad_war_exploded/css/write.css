@@ -1,0 +1,56 @@
+#write{
+	position: absolute;
+	background-color: white;
+	width: 1100px;
+	top: 120px;
+	left: 200px;
+	height: 900px;
+}
+.msg{
+	text-align: center;
+	font-size: 23px;
+}
+.bijibiaoti{
+	border-radius: 5px;/*设置圆角*/
+	width: 900px;
+	height: 50px;
+	margin-left:100px;
+	background-color: #efefef;
+	font-size: 20px;
+}
+#ck{
+	/*position: absolute;*/
+	margin-top: 30px;
+	width: 900px;
+	margin-left:100px;
+	height: 600px;
+	border-radius: 10px;/*设置圆角*/
+}
+.qita{
+	margin-top: 30px;
+	margin-left:100px;
+}
+.select{
+	text-align: center;
+	height: 40px;
+	width: 150px;
+	font-size: 17px;
+	border-radius: 3px;/*设置圆角*/
+}
+.submit{
+	margin-left: 200px;
+	width: 150px;
+	height: 50px;
+	background-color: white;
+	border: solid 1px red;
+	font-size: 17px;
+	color: red;
+	border-radius: 5px;/*设置圆角*/
+}
+.bg_bottom{
+	margin-top: 920px;
+	height: 50px;
+	width: 100%;
+	background-color: gray;
+	overflow: hidden;
+}

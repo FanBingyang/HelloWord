@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<finishers>
+    <runner>
+        <fname>张三</fname>
+        <gender>f</gender>
+        <time>25:31</time>
+    </runner>
+    <runner>
+        <fname>李四</fname>
+        <gender>f</gender>
+        <time>25:35</time>
+    </runner>
+    <runner>
+        <fname>小红</fname>
+        <gender>m</gender>
+        <time>26:44</time>
+    </runner>
+    <runner>
+        <fname>小明</fname>
+        <gender>f</gender>
+        <time>26:81</time>
+    </runner>
+</finishers>
+

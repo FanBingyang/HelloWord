@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<books>
+	<book>
+		<name>Java编程</name>
+		<price>50元</price>
+	</book>
+	<book>
+		<name>Java</name>
+		<price>50元</price>
+	</book>
+</books>

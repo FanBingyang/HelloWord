@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/top.css"/>
+		<link rel="stylesheet" type="text/css" href="css/write.css"/>
+		<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+	</head>
+	<body style="background-color: #f4f4f4;">
+		<div id="top" class="bg_top">
+			<div id="top_left">
+				<img id="tubiao" src="img/tubiao.png"/> 
+				<span id="biaoti">在线笔记本</span>
+			</div>
+			<div id="top_right">
+				<input type="text" name="sousuo" id="" placeholder="找笔记" style="height: 25px;font-size: 13px;"/>&nbsp;
+				<a href="#"><img src="img/sousuo.png" width="20" height="20" />&nbsp;&nbsp;&nbsp;&nbsp;</a>
+				<a class="top_a" href="#">写笔记&nbsp;<img src="img/maobi.png" height="20"/></a>&nbsp;&nbsp;&nbsp;
+				<a class="top_a" href="#">个人中心<img id="touxiang" src="img/tubiao.png" height="50" alt="个人中心" title="个人中心"></a>
+			</div>
+		</div>
+		<div id="write">
+				<p class="msg"><font face="STXingkai">快来写下今天的学习心得吧！</font></p>
+				<form action="" method="post">
+					<input type="text" class="bijibiaoti" name="biaoti" placeholder="输入笔记标题" />
+					<textarea class="ckeditor" id="biji" name="biji"></textarea>
+					<br>
+					<div class="qita">
+						<span style="font-size: 20px;">笔记标签:&nbsp;&nbsp;</span>
+						<select class="select" name="lable" size="1">
+							<option value="" selected="selected">选择分类</option>
+							<option value="">计算机</option>
+							<option value="">数学</option>
+							<option value="">文学</option>
+							<option value="">医学</option>
+							<option value="">法学</option>
+							<option value="">经济学</option>
+							<option value="">社会学</option>
+						</select>
+						<input type="submit" class="submit" name="submit" id="submit" value="发布笔记" />
+					</div>
+				</form>
+		</div>
+		<div class="bg_bottom"></div>
+		<script type="text/javascript">
+	        $(".submit").hover(
+	            function() {
+	                $(".submit").css("background-color","red");
+	                $(".submit").css("color","white");
+				},
+				function() {
+	                $(".submit").css("background-color","white");
+	                $(".submit").css("color","red");
+				});
+		</script>
+	</body>
+</html>

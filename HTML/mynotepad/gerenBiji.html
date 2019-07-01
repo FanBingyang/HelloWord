@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/gerenBiJi.css"/>
+		<link rel="stylesheet" type="text/css" href="css/top.css" />
+		<script type="text/javascript" src="jquery-3.3.1.min.js" ></script>
+		
+	</head>
+	<!--首页不显示水平滚动条，竖直滚动条自动-->
+	<body scroll="no" style="overflow-x:hidden;overflow-y: auto;">
+		<div id="top" class="bg_top">
+			<div id="top_left">
+				<img id="tubiao" src="img/tubiao.png"/> 
+				<span id="biaoti"><font face="STCaiyun">在线笔记本</font></span>
+			</div>
+			<div id="top_right">
+				<input type="text" name="sousuo" id="" placeholder="找笔记" style="height: 25px;font-size: 13px;"/>&nbsp;
+				<a href="#"><img src="img/sousuo.png" width="20" height="20" />&nbsp;&nbsp;&nbsp;&nbsp;</a>
+				<a class="top_a" href="#">写笔记&nbsp;<img src="img/maobi.png" height="20"/></a>&nbsp;&nbsp;&nbsp;
+				<a class="top_a" href="#">个人中心<img id="touxiang" src="img/tubiao.png" height="50" alt="个人中心" title="个人中心"></a>
+			</div>
+		</div>
+		
+		<div id="left">
+			<div id="per">
+				<img src="img/tubiao.png" id="toux"/>
+				<p class="xingming"><a href="#">作者姓名</a></p>
+				<hr style="color: #fcfcfc;"/>
+				<p><a href="#" >原创</a>&nbsp;&nbsp;<a href="#" >文章数量10</a></p>
+				
+			</div>
+			
+			<div class="kongbai"></div>
+			
+			<div class="wenTui">
+				<div class="fubiaoti">最新文章</div>
+				<div class="wenTuiList">
+					<p><a href="#">第一篇文章</a></p>
+					<p><a href="#">第二篇文章</a></p>
+					<p><a href="#">第三篇文章</a></p>
+					<p><a href="#">第四篇文章</a></p>
+					<p><a href="#">第五篇文章</a></p>
+				</div>
+			</div>
+			
+			<div class="kongbai"></div>
+			
+			<div class="wenTui">
+				<div class="fubiaoti">热门文章</div>
+				<div class="wenTuiList">
+					<p><a href="#">第一篇文章</a></p>
+					<p><a href="#">第二篇文章</a></p>
+					<p><a href="#">第三篇文章</a></p>
+					<p><a href="#">第四篇文章</a></p>
+					<p><a href="#">第五篇文章</a></p>
+				</div>
+			</div>
+		</div>
+			
+		<div id="right">
+			<!--拿到数据循环5次，5个为一页-->
+			<div class="wenzhangList">
+				<h3><a href="#">文章名</a></h3>
+				<span class="text">发布时间</span>
+				<hr style="color: #fcfcfc;"/>
+			</div>
+		</div>
+		
+		<div id="foot" class="bg_bottom"></div>
+		
+	</body>
+	
+	
+</html>

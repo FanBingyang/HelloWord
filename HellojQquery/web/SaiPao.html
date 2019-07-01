@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>赛跑ajax实时刷新页面</title>
+    <style>
+        body{
+            background-color: #000;
+            color: white;
+        }
+        #main{
+            color:#111;
+            width: 500px;
+            margin: 8px auto;
+        }
+        #main > li,#main > ul >li {
+            list-style: none;
+            float: left;
+        }
+        #main ul a{
+            display: block;
+            padding: 6px 10px;
+            text-decoration: none!important;
+            margin: 1px 1px 1px 0px ;
+            color: #FFF;
+            background: #444;
+        }
+        #main ul a:hover{
+            color: #FFF;
+            background: #111;
+        }
+        #main ul a.selected{
+            margin-bottom: 0;
+            color: #000;
+            background: snow;
+            border-bottom: 1px solid snow;
+            cursor: default;
+        }
+        #main div{
+            padding: 10px 10px 8px 10px;
+            *padding-top: 3px;
+            *margin-top: -15px;
+            clear: left;
+            background: snow;
+            height: 300px;
+        }
+        #main div a{
+            color: #000;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header><h2>2018 Race Finishers!</h2></header>
+    <div id="main">
+        <ul class="idTabs">
+            <li><a href="#male">Male Finishers</a></li>
+            <li><a href="#female">Female Finishers</a> </li>
+            <li><a href="#all">All Finishers</a></li>
+        </ul>
+        <div id="male">
+            <h4>Male Finishers</h4>
+            <ul id="finishers_m"></ul>
+        </div>
+        <div id="female">
+            <h4>Female FinishersAll Finishers</h4>
+            <ul id="finishers_f"></ul>
+        </div>
+        <div id="all">
+            <h4>All Finishers</h4>
+            <ul id="finishers_all"></ul>
+        </div>
+    </div>
+    <footer>
+        <h4>Congratulations to all our finishers！</h4>
+        <button id="btnStart">Start Page Updates</button>
+        <button id="btnStop">Stop Page Updates</button><br>
+        <span id="frep"></span> <!--用来显示刷新频率-->
+        <br><br>
+        Last Updated:<div id="updatedTime"></div>
+    </footer>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/SaiPao.js"></script>
+    <script src="js/jquery.idTabs.min.js"></script>
+</body>
+</html>

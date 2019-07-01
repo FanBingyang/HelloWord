@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>盒子的排列方式</title>
+    <style>
+        section{
+            width: 80%;
+            height: 400px;
+            border: 1px solid red;
+            /*1,转换模式 flex 弹性 伸缩*/
+            display: flex;
+            /*2,主元素在主轴X轴显示 水平显示*/
+            /*flex-direction: row;*/
+            /*主元素在侧轴Y轴显示 竖直显示*/
+            flex-direction: column;
+
+            /*3,子元素在主轴上的对齐方式*/
+            /*justify-content: flex-start;  左侧对齐  相当于float:left*/
+            /*justify-content: flex-end;  右侧对齐,相当于float:right*/
+
+            /*justify-content: center;!*居中对齐*!*/
+
+            /*平均分配剩余空间,相当于每个盒子都有margin-lefy和margin-right*/
+            /*justify-content: space-around;*/
+
+            /*左侧和右侧盒子分别顶住两边,中间空间平均分配*/
+            /*justify-content: space-between;*/
+
+            /*4,align-content: 设置侧轴上子元素的排列方式;*/
+            /*align-content: flex-start; 垂直上对齐*/
+            /*align-content: flex-end;  !*垂直下对齐*!*/
+            /*align-content: center;!*垂直居中对齐*!*/
+
+            /*弹性盒布局默认不会换行*/
+            /*flex-wrap: nowrap;*/
+            /*让子盒子会换行操作*/
+            flex-wrap: wrap;
+
+            /*align-content: 设置侧轴上的子元素的排列方式(多行);*/
+            /*多行盒子上对齐*/
+            /*align-content: flex-start;*/
+            /*多行盒子下对齐*/
+            /*align-content: flex-end;*/
+            /*多行盒子竖直居中对齐*/
+            /*align-content: center;*/
+
+            /*align-content: space-around;*/
+            align-content: space-between;
+            /*align-content: space-evenly;*/
+        }
+
+
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+        div:nth-child(2){
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+<section>
+    <!--生成10个div,中间的数字是1-10,  div{$}*10 $生成的数字从1开始-->
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+
+</section>
+</body>
+</html>

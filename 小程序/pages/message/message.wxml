@@ -1,0 +1,14 @@
+<view class='card'>
+    <text class='card-title'>今日毒鸡汤</text>
+    <text class='card-date'>2019-1-8</text>
+    <image class='card-img' src='http://img4.imgtn.bdimg.com/it/u=862365864,711925972&fm=26&gp=0.jpg' mode='aspectFill'></image>
+    <text class='card-desc'>越努力，越幸运！</text>
+    <text class='card-read arrow'>查看详情</text>
+</view>
+<view class='card'>
+    <text class='card-title'>情感生活</text>
+    <text class='card-date'>2019-1-8</text>
+    <image class='card-img' src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1546965024550&di=87c902f21447d1e7b5873d967e9d8e27&imgtype=0&src=http%3A%2F%2Fpic40.nipic.com%2F20140415%2F4760_165513319366_2.jpg' mode='aspectFill'></image>
+    <text class='card-desc'>爱的使者！</text>
+    <text class='card-read arrow'>查看详情</text>
+</view>

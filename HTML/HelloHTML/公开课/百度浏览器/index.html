@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>百度浏览器</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: url(./bg.png);
+            width: 100%;
+            height: 100%;
+        }
+        .content{
+            position:absolute;/*相对定位*/
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            /*这是星星*/
+            background: url(./bg1.png);
+            /*animation: xx1 2s alternate infinite;*/
+        }
+
+        /*一大堆山*/
+        .mountain{
+            width: 100%;
+            /*超出盒子隐藏*/
+            overflow: hidden;
+        }
+        .moun3{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 3800px;
+            height: 400px;
+            background: url("./shan3.png");
+            background-size: auto 100%;
+            animation: moun 160s infinite;
+        }
+         .moun2{
+            position: absolute;
+            bottom:-40px;
+            left: 0;
+            width: 3800px;
+            height: 300px;
+            background: url("./shan2.png");
+            background-size: auto 100%;
+            animation: moun 120s infinite;
+        }
+        .moun1{
+            /*绝对定位*/
+            position: absolute;
+            bottom: 0;/*下对齐*/
+            left: 0;/*左对齐*/
+            width: 3800px;
+            height: 200px;
+            background: url(./shan1.png);
+            /*背景缩放 x 水平 y 垂直 auto 水平自动 100% 垂直和父亲一样background-size: x水平,y垂直;*/
+            background-size: auto 100%;
+            /*让山动起来,  infinite无限循环做动画*/
+            animation: moun 80s infinite;
+        }
+        @keyframes moun {
+               0%{
+                   transform: translate(0);
+               }
+            100%{
+                /*translate(-50%)向左走自己宽度的50%,原宽度是3800*/
+                transform: translate(-50%);
+            }
+        }
+        .bear{
+            position: absolute;
+            bottom: 25px;
+            left: 0;
+            width: 120px;
+            height: 60px;
+            /*forwards 到100%目标位置停在该处,不再返回*/
+            animation: bear 10s forwards;
+        }
+        @keyframes bear {
+
+            0%{
+                left: 0;
+            }
+            100%{
+                /*translate(50%)表示走自己宽度的一半;如果写精确单位那就是走精确单位*/
+                /*跑到父亲的50%,即是屏幕宽度的50%*/
+                left: 50%;
+            }
+        }
+        .caihong{
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%);
+            width: 1100px;
+            height: 700px;
+            /*no-repeat背景不重复*/
+            background: url(./caihong.png) no-repeat;
+            background-size: 100%;
+            animation: ch 3s alternate infinite;
+        }
+        @keyframes ch {
+            0%{
+                /*opacity透明度,1是完全不透明,0是全透明*/
+                opacity: 1;
+            }
+            100%{
+                opacity: 0.5;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="mountain">
+            <!--白色的山3-->
+            <div class="moun3"></div>
+            <!--白色的山2-->
+            <div class="moun2"></div>
+            <!--白色的山1-->
+            <div class="moun1"></div>
+            <!--白色的小熊-->
+            <div class="bear">
+                <img src="bear.gif" alt="">
+            </div>
+            <!--彩虹的效果-->
+            <div class="caihong"></div>
+        </div>
+    </div>
+</body>
+</html>

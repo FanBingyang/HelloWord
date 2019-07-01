@@ -1,0 +1,45 @@
+.al{
+	color: #000000;
+	text-align: center;
+	text-decoration: none;
+	font-size: 12px;
+}
+
+.a1:hover{
+	text-decoration: underline;
+	font-size: 14px;
+}
+
+.tr1{
+	color: #59aCFF;
+	font-size: 12px;
+}
+.tr2{
+	color: #EE9388;
+	font-size: 12px;
+}
+table{
+	background-color: #C1FFFF;
+	text-align: center;
+	border: 1 solid #FF8080;
+	border-collapse: collapse;
+}
+
+.a2{
+	color: #0000FF;
+	text-align: center;
+	text-decoration: none;
+	font-size: 12px;
+}
+
+.a2:hover{
+	color: #FF0000;
+	text-decoration: underline;
+	font-size: 14px;
+}
+
+a{
+	text-decoration: none;
+	color: #FF8F59;
+	font-size: 12px;
+}

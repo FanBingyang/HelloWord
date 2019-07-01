@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mapper.ClientMapper" >
+    <resultMap id="BaseResultMap" type="pojo.Client" >
+        <id column="client_id" property="clientId" jdbcType="INTEGER" />
+        <result column="client_name" property="clientName" jdbcType="VARCHAR" />
+        <result column="client_sex" property="clientSex" jdbcType="VARCHAR" />
+        <result column="client_tel" property="clientTel" jdbcType="VARCHAR" />
+        <result column="client_address" property="clientAddress" jdbcType="VARCHAR" />
+    </resultMap>
+
+  <!--//根据id删除客户-->
+  <!--void deleteClientById(Integer clientId);-->
+    <delete id="deleteClientById" parameterType="Integer">
+        delete from client
+        where client_id = #{clientId}
+    </delete>
+
+  <!--//添加新的客户-->
+  <!--int insertClient(Client client);-->
+    <insert id="insertClient" parameterType="Client">
+        insert into client (client_id, client_name, client_sex,
+      client_tel, client_address)
+    values (#{clientId}, #{clientName}, #{clientSex},
+      #{clientTel}, #{clientAddress})
+    </insert>
+
+  <!--//根据id查询客户,这是一对多关联，以客户为中心关联宠物-->
+  <!--Client selectClientById(Integer clientId);-->
+    <resultMap id="client" type="Client">
+        <id column="client_id" property="clientId"/>
+        <result column="client_name" property="clientName"/>
+        <result column="client_sex" property="clientSex"/>
+        <result column="client_tel" property="clientTel"/>
+        <result column="client_address" property="clientAddress"/>
+        <!-- 一对多关联 -->
+        <collection property="petList" ofType="Pet" >
+            <id column="pet_id" property="petId"/>
+            <result column="pet_name" property="petName"/>
+            <result column="pet_kind" property="petKind"/>
+        </collection>
+    </resultMap>
+    <select id="selectClientById" parameterType="Integer" resultMap="client">
+        select
+        cl.client_id,
+        cl.client_name,
+        cl.client_sex,
+        cl.client_tel,
+        cl.client_address,
+        p.pet_name,
+        p.pet_kind
+        from client cl
+        left join pet p
+        on cl.client_id = p.client_id
+        <where>
+            cl.client_id = #{clientId}
+        </where>
+    </select>
+
+  <!--//根据条件（姓名）查询客户信息-->
+  <!--List<Client> selectClientByQuery(Client client);-->
+    <select id="selectClientByQuery" parameterType="Client" resultMap="BaseResultMap">
+        select * from client
+        <where>
+            <if test="clientName != null and clientName != ''">
+                client_name like "%"#{clientName}"%"
+            </if>
+        </where>
+    </select>
+
+  <!--//根据id修改客户信息-->
+  <!--int updateClient(Client record);-->
+    <update id="updateClient" parameterType="Client" >
+    update client
+    set client_name = #{clientName},
+      client_sex = #{clientSex},
+      client_tel = #{clientTel},
+      client_address = #{clientAddress}
+    where client_id = #{clientId}
+  </update>
+</mapper>

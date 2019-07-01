@@ -1,0 +1,6 @@
+127.0.0.1 - - [07/Mar/2019:21:47:51 +0800] "GET / HTTP/1.1" 404 1074
+127.0.0.1 - - [07/Mar/2019:21:48:36 +0800] "GET /uploadFile/upload2.jsp HTTP/1.1" 200 521
+127.0.0.1 - - [07/Mar/2019:21:48:49 +0800] "POST /uploadFile/uploadServlet2 HTTP/1.1" 200 -
+127.0.0.1 - - [07/Mar/2019:22:38:45 +0800] "GET / HTTP/1.1" 404 1074
+127.0.0.1 - - [07/Mar/2019:22:38:48 +0800] "GET /uploadFile/upload.jsp HTTP/1.1" 200 480
+127.0.0.1 - - [07/Mar/2019:22:39:42 +0800] "POST /uploadFile/uploadServlet2 HTTP/1.1" 200 -

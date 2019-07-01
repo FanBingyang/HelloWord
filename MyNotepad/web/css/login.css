@@ -1,0 +1,152 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: url("../image/bg.png");
+    width: 100%;
+    height: 100%;
+}
+.content{
+    position:absolute;/*相对定位*/
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    /*这是星星*/
+    background: url("../image/bg1.png");
+    /*animation: star 3s alternate infinite;*/
+}
+
+/*一大堆山*/
+.mountain{
+    width: 100%;
+    /*超出盒子隐藏*/
+    overflow: hidden;
+}
+.moun3{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 3800px;
+    height: 55%;
+    background: url("../image/shan1.png");
+    background-size: auto 100%;
+    animation: moun 160s infinite;
+}
+.moun2{
+    position: absolute;
+    bottom:-40px;
+    left: 0;
+    width: 3800px;
+    height: 40%;
+    background: url("../image/shan2.png");
+    background-size: auto 100%;
+    animation: moun 120s infinite;
+}
+.moun1{
+    /*绝对定位*/
+    position: absolute;
+    bottom: 0;/*下对齐*/
+    left: 0;/*左对齐*/
+    width: 3800px;
+    height: 25%;
+    background: url("../image/shan1.png");
+    /*背景缩放 x 水平 y 垂直 auto 水平自动 100% 垂直和父亲一样background-size: x水平,y垂直;*/
+    background-size: auto 100%;
+    /*让山动起来,  infinite无限循环做动画*/
+    animation: moun 80s infinite;
+}
+@keyframes moun {
+    0%{
+        transform: translate(0);
+    }
+    100%{
+        /*translate(-50%)向左走自己宽度的50%,原宽度是3800*/
+        transform: translate(-50%);
+    }
+}
+.bear{
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    width: 120px;
+    height: 60px;
+    /*forwards 到100%目标位置停在该处,不再返回*/
+    animation: bear 10s forwards;
+}
+@keyframes bear {
+
+    0%{
+        left: 0;
+    }
+    100%{
+        /*translate(50%)表示走自己宽度的一半;如果写精确单位那就是走精确单位*/
+        /*跑到父亲的50%,即是屏幕宽度的50%*/
+        left: 50%;
+    }
+}
+
+.menu{
+    position: absolute;
+    float: left;
+    top: 15%;
+    height: 6%;
+    width: 30%;
+    padding-top: 1.9%;
+    text-align: center;/*文字在div中左右剧中*/
+    overflow: hidden;/*超出边界后隐藏*/
+    opacity: 0.6; /*设置透明度，1是完全不透明,0是全透明*/
+    cursor: pointer;  /*设置当鼠标放在该div上时形状变成手的形状*/
+}
+
+.menu span{
+    font-size: 22px;
+    font-family: STZhongsong;
+    font-weight: bold;
+}
+
+#login{
+    left: 35%;
+    width: 15%;
+    border-top-left-radius: 10px;/*设置左上角为圆角*/
+    background-color: honeydew;
+}
+#register{
+    left: 50%;
+    width: 15%;
+    border-top-right-radius: 10px;/*设置右上角为圆角*/
+    background-color: grey;
+}
+
+.biaodan{
+    position: absolute;
+    float: left;
+    left: 35%;
+    top: 25%;
+    width: 30%;
+}
+
+.button{
+    height: 40px;
+    width: 80px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: darkgray;
+    font-family: SimHei;
+    font-weight: bold;
+}
+
+.font{
+    height: 40px;
+    font-size: 20px;
+    color: black;
+    font-family: STKaiti;
+    font-weight: bolder;
+}
+
+.erro{
+    color: red;
+    font-size: 10px;
+    height: 10px;
+}

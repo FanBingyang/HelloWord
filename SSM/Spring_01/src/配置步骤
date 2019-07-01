@@ -1,0 +1,21 @@
+1.导入约束
+	Window-->Preferences-->搜索cata，找到XML Catalog-->add-->找到本机的spring-framework-4.2.4.RELEASE\schema\bean\spring-beans-4.2.xsd
+	-->Key type-->Schema location-->将spring-beans-4.2.xsd复制到Key的末尾，记得加上/后复制-->ok
+	
+2.配置约束
+	打开XML文件-->书写beans-->切换到design视图-->选中beans右键-->Edit Schema Information-->add-->选中xsi-->ok-->add-->Specify New Namespace-->
+	Location Hint-->选中上面刚刚添加的约束-->将去掉文件名的路径http://www.springframework.org/schema/beans复制到Namespace Name中-->Prefix不做操作-->ok
+ ***打开XML文件切换到Source视图，再beans中写<,然后Alt+/会出来提示，则表示配置成功	
+
+ 
+ 
+ 1.导入注解约束
+	Window-->Preferences-->搜索cata，找到XML Catalog-->add-->找到本机的http://www.springframework.org/schema/context/spring-context-4.2.xsd
+	-->Key type-->Schema location-->将spring-context-4.2.xsd复制到Key的末尾，记得加上/后复制-->ok
+	
+2.配置注解约束
+	打开XML文件-->书写beans-->切换到design视图-->选中beans右键-->Edit Schema Information-->add-->Specify New Namespace-->
+	Location Hint-->选中上面刚刚添加的约束-->将去掉文件名的路径http://www.springframework.org/schema/context复制到Namespace Name中-->Prefix为context-->ok
+ ***打开XML文件切换到Source视图，再beans中写<,然后Alt+/会出来提示，则表示配置成功	
+ 注意：一个xml文件里只能有一个约束的Prefix为空，上一个约束已经配置为空了，这次就不能为空了，用文件的上一侧文件夹名填入
+ 3.
